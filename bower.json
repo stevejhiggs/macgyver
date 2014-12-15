@@ -1,0 +1,20 @@
+{
+  "name": "macgyver",
+  "version": "0.0.1",
+  "authors": [
+    "Steve Higgs <stevejhiggs@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.1"
+  }
+}
