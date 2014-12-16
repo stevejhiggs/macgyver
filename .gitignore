@@ -3,3 +3,4 @@ public/js/bundle.js
 public/js/bower_components/
 .DS_Store
 npm-debug.log
+.idea/
