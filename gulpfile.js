@@ -1,5 +1,6 @@
 // gulp
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 
 // plugins
 var browserify = require('browserify');
@@ -19,12 +20,12 @@ var paths = {
 }
 
 gulp.task('browserify', function () {
-    var bundler = browserify('./src/main.js', {basedir: __dirname, debug: !production});
-    bundler.transform(reactify);
-    var stream = bundler.bundle();
-    return stream
-        .pipe(source('bundle.js'))
-        .pipe(gulp.dest(paths.browserifyOutput));
+    return browserify('./src/main.js', {basedir: __dirname, debug: !production})
+    .transform(reactify)
+    .bundle()
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest(paths.browserifyOutput));
 });
 
 gulp.task('scss', function() {
