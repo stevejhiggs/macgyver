@@ -22,6 +22,9 @@ var Game = React.createClass({
 	getInitialState: function() {
 		return getGameState();
 	},
+	handleToolSelected: function(id) {
+		console.log(id);
+	},
 	componentDidMount: function () {
 		SituationStore.addChangeListener(this._onChange);
 	},
@@ -31,11 +34,15 @@ var Game = React.createClass({
 	render: function() {
 		return (
 		<div className="macgyver-game">
-			<Situation currentSituation={this.state.currentSituation} />
-			<div className="tools">
+			<div className="col-sm-8">
+				<Situation currentSituation={this.state.currentSituation} />
+			</div>
+			<div className="col-sm-4">
+				<div className="list-group">
 				{this.state.tools.map(function(t) {
-					return <Tool tool={t} />;
+					return <Tool onToolSelected={this.handleToolSelected} tool={t} />;
 				}, this)}
+				</div>
 			</div>
 		</div>
 		);

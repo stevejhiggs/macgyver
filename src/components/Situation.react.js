@@ -6,6 +6,7 @@ var Situation = React.createClass({
 		return (
 			<div className="situation">
 				<h4>{this.props.currentSituation.name}</h4>
+				<p>{this.props.currentSituation.description}</p>
 			</div>
 			)
 	}
