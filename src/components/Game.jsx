@@ -2,8 +2,8 @@ var React = require('react');
 var MacgyverActions = require('../actions/MacgyverActions');
 var SituationStore = require('../stores/SituationStore');
 var ToolStore = require('../stores/ToolStore');
-var Situation = require('./Situation.react');
-var Tool = require('./Tool.react');
+var Situation = require('./Situation.jsx');
+var Tool = require('./Tool.jsx');
 var _ = require('underscore');
 
 function getGameState() {
