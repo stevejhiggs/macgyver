@@ -6,14 +6,35 @@
   <meta name="description" content="React, Hapi, Node">
   <meta name="author" content="Steve Higgs">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="generated/styles/main.css">
-
 </head>
-<body>
-  <div id="App">hello</div>
+<body role="document">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Bootstrap theme</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  <div class="container" role="main">
+      <div class="page-header">
+        <h1>Macgyver</h1>
+      </div>
+      <div id="App"></div>
+  </div>
+  
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="js/bower_components/jquery/dist/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
