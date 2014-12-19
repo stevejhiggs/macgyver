@@ -13,6 +13,12 @@ var MacgyverActions = {
     		actionType: MacgyverConstants.RECEIVE_SITUATIONS_DATA,
       		data: data
     	});
+	},
+	checkAnswer: function(data) {
+		AppDispatcher.handleViewAction({
+    		actionType: MacgyverConstants.CHECK_ANSWER,
+      		data: data
+    	});
 	}
 };
 

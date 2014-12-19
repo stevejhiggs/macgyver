@@ -7,13 +7,16 @@ var Tool = require('./Tool.react');
 var _ = require('underscore');
 
 function getGameState() {
-	var situations = _.shuffle(SituationStore.getSituations());
+	var situations = SituationStore.getSituations();
 	var currentSituation = SituationStore.getCurrent();
 	var tools = ToolStore.getTools();
+	var gameCompleteStatus = SituationStore.getGameCompleteStatus();
+
 	return {
 		situations: situations,
 		currentSituation: currentSituation,
-		tools: tools
+		tools: tools,
+		gameCompleteStatus: gameCompleteStatus
 	};
 }
 
@@ -23,13 +26,15 @@ var Game = React.createClass({
 		return getGameState();
 	},
 	handleToolSelected: function(id) {
-		console.log(id);
+		MacgyverActions.checkAnswer(id);
 	},
 	componentDidMount: function () {
 		SituationStore.addChangeListener(this._onChange);
+		ToolStore.addChangeListener(this._onChange);
 	},
 	componentWillUnmount: function() {
 		SituationStore.removeChangeListener(this._onChange);
+		ToolStore.removeChangeListener(this._onChange);
 	},
 	render: function() {
 		return (
@@ -39,9 +44,11 @@ var Game = React.createClass({
 			</div>
 			<div className="col-sm-4">
 				<div className="list-group">
-				{this.state.tools.map(function(t) {
-					return <Tool onToolSelected={this.handleToolSelected} tool={t} />;
-				}, this)}
+				{
+					this.state.tools.map(function(t) {
+						return <Tool onToolSelected={this.handleToolSelected} tool={t} />;
+					}, this)
+				}
 				</div>
 			</div>
 		</div>
