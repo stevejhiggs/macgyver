@@ -1,6 +1,5 @@
 node_modules
-public/js/bundle.js
-public/js/bower_components/
+public/bower_components/
 .DS_Store
 npm-debug.log
 .idea/
