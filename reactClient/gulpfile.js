@@ -10,6 +10,7 @@ var to5ify = require("6to5ify");
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var buffer = require('vinyl-buffer');
+var nodemon = require('gulp-nodemon')
 
 var production = process.env.NODE_ENV === 'production';
 
@@ -35,6 +36,13 @@ gulp.task('scss', function() {
         .pipe(gulp.dest('./public/generated/styles'));
 });
 
+gulp.task('develop', function () {
+    nodemon({ script: 'server.js', ext: 'js', ignore: ['**/public/**/*.*'] })
+        .on('restart', function () {
+            console.log('restarting server')
+        });
+})
+
 gulp.task('watch', function() {
     gulp.watch(['./src/**/*.jsx', './src/**/*.js'], ['browserify']);
     gulp.watch(['./src/styles/**/*.scss'], ['scss']);
@@ -42,4 +50,4 @@ gulp.task('watch', function() {
 
 // Just running the two tasks
 gulp.task('generate', ['browserify', 'scss']);
-gulp.task('default', ['generate', 'watch']);
+gulp.task('default', ['generate', 'watch', 'develop']);

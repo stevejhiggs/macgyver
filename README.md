@@ -26,11 +26,11 @@ but is no growing to encompass a variety of different examples for people to tak
 
     npm start
 
-Point your browser to `http://localhost:8000` to see the sample page!
+Point your browser to `http://localhost:8000` to see the sample page.
 
 ## development
 
-To auto rebuild jsx views during development run:
+For easy development including auto rebuilding jsx views run:
 
     gulp
 
