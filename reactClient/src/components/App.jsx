@@ -1,9 +1,7 @@
-(function () {
-  'use strict';
+'use strict';
+var React = require('react');
 
-  var React = require('react');
-
-  var App = React.createClass({
+var App = React.createClass({
     getInitialState: function() {
       return {};
     },
@@ -28,8 +26,6 @@
         </div>
       );
     }
-  });
+});
 
-  module.exports = App;
-
-}());
+module.exports = App;

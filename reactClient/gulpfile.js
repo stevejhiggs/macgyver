@@ -1,43 +1,43 @@
 // gulp
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 
 // plugins
 var browserify = require('browserify');
 var source = require("vinyl-source-stream");
-var reactify = require('reactify');
+var uglify = require('gulp-uglify');
+var to5ify = require("6to5ify");
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var buffer = require('vinyl-buffer');
 
 var production = process.env.NODE_ENV === 'production';
 
-var paths = {
-    js: './src/**/*.js',
-    jsx: './src/components/**/*.jsx',
-    scss: './src/styles/**/*.scss',
-    scssOutput: './public/generated/styles',
-    browserifyOutput: './public/generated/js'
-}
-
 gulp.task('browserify', function () {
-    var bundler = browserify('./src/main.js', {basedir: __dirname, debug: !production});
-    bundler.transform(reactify);
-    var stream = bundler.bundle();
-    return stream
+    browserify('./src/main.jsx', {basedir: __dirname, debug: !production})
+        .transform(to5ify)
+        .require('./node_modules/react/react.js', { expose: 'react'})
+        .bundle()
+        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('bundle.js'))
-        .pipe(gulp.dest(paths.browserifyOutput));
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./public/generated/js'));
 });
 
 gulp.task('scss', function() {
-    gulp.src(paths.scss)
+    gulp.src('./src/styles/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.scssOutput));
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./public/generated/styles'));
 });
 
 gulp.task('watch', function() {
-    gulp.watch([paths.jsx, paths.js], ['browserify']);
-    gulp.watch([paths.scss], ['scss']);
+    gulp.watch(['./src/**/*.jsx', './src/**/*.js'], ['browserify']);
+    gulp.watch(['./src/styles/**/*.scss'], ['scss']);
 });
 
 // Just running the two tasks
