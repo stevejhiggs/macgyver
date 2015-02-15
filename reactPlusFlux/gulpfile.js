@@ -10,7 +10,7 @@ var to5ify = require("6to5ify");
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var buffer = require('vinyl-buffer');
-var nodemon = require('gulp-nodemon')
+var nodemon = require('gulp-nodemon');
 
 var production = process.env.NODE_ENV === 'production';
 
