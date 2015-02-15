@@ -17,7 +17,7 @@ var production = process.env.NODE_ENV === 'production';
 gulp.task('browserify', function () {
     browserify('./src/main.jsx', {basedir: __dirname, debug: !production})
         .transform(to5ify)
-        .require('./node_modules/react/react.js', { expose: 'react'})
+        .require('./node_modules/react/react.js', { expose: 'react'}) //expose this to make sure the dev tools work
         .bundle()
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('bundle.js'))
