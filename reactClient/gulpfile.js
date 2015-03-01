@@ -6,7 +6,7 @@ var gutil = require('gulp-util');
 var browserify = require('browserify');
 var source = require("vinyl-source-stream");
 var uglify = require('gulp-uglify');
-var to5ify = require("6to5ify");
+var babelify = require("babelify");
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var buffer = require('vinyl-buffer');
@@ -16,7 +16,7 @@ var production = process.env.NODE_ENV === 'production';
 
 gulp.task('browserify', function () {
     browserify('./src/main.jsx', {basedir: __dirname, debug: !production})
-        .transform(to5ify)
+        .transform(babelify)
         .require('./node_modules/react/react.js', { expose: 'react'}) //expose this to make sure the dev tools work
         .bundle()
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
