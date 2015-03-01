@@ -1,7 +1,7 @@
 'use strict';
-var React = require('react');
+import React from 'react';
 
-var App = React.createClass({
+export default React.createClass({
     getInitialState: function() {
       return {};
     },
@@ -27,5 +27,3 @@ var App = React.createClass({
       );
     }
 });
-
-module.exports = App;
