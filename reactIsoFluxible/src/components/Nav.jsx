@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'fluxible-router';
 
-class Nav extends React.Component {
+export default class Nav extends React.Component {
     render() {
         return (
             <ul className="pure-menu pure-menu-open pure-menu-horizontal">
@@ -11,5 +11,3 @@ class Nav extends React.Component {
         );
     }
 }
-
-export default Nav;

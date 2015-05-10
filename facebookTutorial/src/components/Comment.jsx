@@ -1,8 +1,8 @@
 'use strict';
 import React from 'react';
 
-export default React.createClass({
-    render: function() {
+export default class Comment extends React.Component {
+    render() {
         return (
             <div className="comment">
                 <h2 className="commentAuthor">
@@ -12,4 +12,4 @@ export default React.createClass({
             </div>
         );
     }
-});
+}

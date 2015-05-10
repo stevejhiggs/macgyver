@@ -1,7 +1,7 @@
 import React from 'react';
 import Counter from './Counter';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
     render() {
         return (
             <div>
@@ -10,5 +10,3 @@ class Home extends React.Component {
         );
     }
 }
-
-export default Home;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ApplicationStore from '../stores/ApplicationStore';
 
-class HtmlComponent extends React.Component {
+export default class HtmlComponent extends React.Component {
     render() {
         return (
             <html>
@@ -20,5 +20,3 @@ class HtmlComponent extends React.Component {
         )
     }
 }
-
-export default HtmlComponent;

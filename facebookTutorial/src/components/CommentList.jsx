@@ -2,8 +2,8 @@
 import React from 'react';
 import Comment from './Comment.jsx';
 
-export default React.createClass({
-    render: function() {
+export default class CommentList extends React.Component {
+    render() {
         var commentNodes = this.props.data.map(function (comment) {
             return (
                 <Comment key={comment.id} author={comment.author}>
@@ -18,4 +18,4 @@ export default React.createClass({
             </div>
         );
     }
-});
+}
