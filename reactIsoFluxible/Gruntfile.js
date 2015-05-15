@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         },
         nodemon: {
             dev: {
-                script: './server.js',
+                script: './src/server.js',
                 options: {
                     ignore: ['build/**'],
                     ext: 'js,jsx'

@@ -1,7 +1,7 @@
 /*global App, document, window */
 import React from 'react';
 import debug from 'debug';
-import app from './app';
+import app from './reactApp/app';
 
 const bootstrapDebug = debug('Example');
 const dehydratedState = window.App; // Sent from the server
