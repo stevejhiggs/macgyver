@@ -10,7 +10,10 @@ module.exports = function(app, component) {
     var context = app.createContext();
 
     debug('Executing navigate action');
-    context.executeAction(navigateAction, { url: req.path }, function (err) {
+    context.executeAction(navigateAction, {
+      url: req.path,
+      method: req.method
+    }, function (err) {
       if (err) {
         if (err.statusCode && err.statusCode === 404) {
           debug('No match found in the react routing table');
