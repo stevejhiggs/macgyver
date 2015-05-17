@@ -8,5 +8,10 @@ export default {
         path: '/about',
         method: 'get',
         handler: require('./components/About.jsx')
+    },
+    apiExample: {
+        path: '/apiExample',
+        method: 'get',
+        handler: require('./components/ApiExample.jsx')
     }
 };
