@@ -41,7 +41,7 @@ gulp.task('develop', function () {
         .on('restart', function () {
             console.log('restarting server')
         });
-})
+});
 
 gulp.task('watch', function() {
     gulp.watch(['./src/**/*.jsx', './src/**/*.js'], ['browserify']);

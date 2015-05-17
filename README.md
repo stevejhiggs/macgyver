@@ -9,6 +9,8 @@ but is no growing to encompass a variety of different examples for people to tak
 
 * reactClient - the simplest possible implementation of react. Shows how to get the views built and injected client side.
 * reactPlusFlux - shows the integration of react with the flux design architecture and how they compliment each other. - credit to @rtomlinson
+* facebookTutorial - an implementation of the standard facebook react tutorial
+* reactIsoFluxible - shows a fully isomorphic app using fluxible - probably a little easier to follow than the raw flux example
 
 ## Installation
 
@@ -24,15 +26,14 @@ but is no growing to encompass a variety of different examples for people to tak
 
     npm install
 
-    npm start
+    gulp
 
-Point your browser to `http://localhost:8000` to see the sample page.
+Point your browser to wherever the example is running (it will say in the console)
 
 ## development
 
-For easy development including auto rebuilding jsx views run:
+running via gulp will give you auto file watching, rebuilding and restarting
 
-    gulp
 
 
 
