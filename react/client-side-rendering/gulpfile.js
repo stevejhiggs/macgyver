@@ -32,7 +32,7 @@ gulp.task('webpack-watch', function(done) {
 gulp.task('dev-server', function () {
     nodemon({ script: 'src/server.js', ext: 'js,jsx', ignore: ['**/public/**/*.*'] })
         .on('restart', function () {
-            console.log('restarting server')
+            console.log('restarting server');
         });
 });
 
