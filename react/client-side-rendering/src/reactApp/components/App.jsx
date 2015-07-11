@@ -3,24 +3,24 @@ import React from 'react';
 
 export default React.createClass({
     getInitialState: function() {
-      return {};
+        return {};
     },
     componentDidMount: function () {},
     componentWillUnmount: function() {},
 
     render: function() {
-      return (
+        return (
         <div>
-          <div class="container-fluid">
-            <div class="page-header">
+          <div className="container-fluid">
+            <div className="page-header">
               <h1>MacGyver in the house</h1>
             </div>
-            <p class="lead">stopping nuclear weapons with a paperclip, react.js and hapi.js</p>
+            <p className="lead">stopping nuclear weapons with a paperclip, react.js and hapi.js</p>
           </div>
 
-          <div class="footer">
-            <div class="container">
-              <p class="text-muted">decidedly work in progress</p>
+          <div className="footer">
+            <div className="container">
+              <p className="text-muted">decidedly work in progress</p>
             </div>
           </div>
         </div>

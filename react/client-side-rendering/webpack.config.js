@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     resolve: {
@@ -6,23 +7,22 @@ module.exports = {
     },
     entry: './src/client.js',
     output: {
-        path: './public/generated/js',
+        path: path.join(__dirname, 'public/generated/js'),
+        publicPath: "generated/js",
         filename: 'client.js'
     },
     module: {
+        preLoaders: [
+            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: require.resolve('eslint-loader') }
+        ],
         loaders: [
             { test: /\.css$/, loader: 'style!css' },
-            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: require.resolve('babel-loader') },
-            { test: /\.js$/, exclude: '/node_modules/', loader: require.resolve('eslint-loader') }
+            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: require.resolve('babel-loader') }
         ]
     },
     plugins: [
         // Protects against multiple React installs when npm linking
         new webpack.NormalModuleReplacementPlugin(/^react?$/, require.resolve('react')),
         new webpack.NormalModuleReplacementPlugin(/^react(\/addons)?$/, require.resolve('react/addons'))
-    ],
-    stats: {
-        colors: true
-    },
-    devtool: 'source-map'
+    ]
 };
