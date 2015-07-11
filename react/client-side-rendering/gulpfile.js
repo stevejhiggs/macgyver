@@ -37,10 +37,6 @@ gulp.task("webpack:build-release", function(callback) {
 });
 
 gulp.task('webpack:build-dev', function(callback) {
-    var devConfig = Object.create(webpackConfig);
-    devConfig.devtool = 'sourcemap';
-    devConfig.debug = true;
-
     devCompiler.run(function(err, stats) {
         if(err) throw new gutil.PluginError("webpack:build", err);
         gutil.log("[webpack:build]", stats.toString({
