@@ -7,10 +7,10 @@ but is no growing to encompass a variety of different examples for people to tak
 
 # available examples
 
-* react/client-side-rendering - the simplest possible implementation of react. Shows how to get the views built and injected client side.
-* facebookTutorial - an implementation of the standard facebook react tutorial
+* simpleComponent - the simplest possible implementation of react. Shows how to get the views built and injected client side.
 
-* flux/basic-flux - shows the integration of react with the flux design architecture and how they compliment each other. - credit to @rtomlinson
+* raw-flux - shows the integration of react with the flux design architecture and how they compliment each other. - credit to @rtomlinson
+* redux - shows how to use the fantastic redux flux implementation
 * fluxible_fluxible-router - shows a fully isomorphic app using fluxible and the fluxible-router - probably a little easier to follow than the basic flux example
 
 ## Installation
