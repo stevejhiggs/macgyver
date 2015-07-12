@@ -1,15 +1,14 @@
-'use strict';
 import React from 'react';
 import Counter from './counter';
 
 export default React.createClass({
-    getInitialState: function() {
+    getInitialState: function getInitialState() {
         return {};
     },
-    componentDidMount: function () {},
-    componentWillUnmount: function() {},
+    componentDidMount: function componentDidMount() {},
+    componentWillUnmount: function componentWillUnmount() {},
 
-    render: function() {
+    render: function render() {
         return (
         <div>
           <div className="container-fluid">
