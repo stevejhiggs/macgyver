@@ -22,6 +22,7 @@ export default class Counter extends React.Component {
         );
     }
 
+    //  the odd arrow syntax ensures we rebind this to the class
     increment = () => {
         this.setState({ count: this.state.count + 1 });
     };
