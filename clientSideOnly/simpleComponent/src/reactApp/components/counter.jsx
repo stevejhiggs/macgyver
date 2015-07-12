@@ -11,23 +11,23 @@ export default class Counter extends React.Component {
     }
 
     render() {
+        //  ::x is an es7 shortcut to this.x.bind(this);
         return (
             <p>
                 Clicked: {this.state.count} times
                 {' '}
-                <button onClick={this.increment}>+</button>
+                <button onClick={::this.increment}>+</button>
                 {' '}
-                <button onClick={this.decrement}>-</button>
+                <button onClick={::this.decrement}>-</button>
             </p>
         );
     }
 
-    //  the odd arrow syntax ensures we rebind this to the class
-    increment = () => {
+    increment() {
         this.setState({ count: this.state.count + 1 });
-    };
+    }
 
-    decrement= () => {
+    decrement() {
         this.setState({ count: this.state.count - 1 });
-    };
+    }
 }
