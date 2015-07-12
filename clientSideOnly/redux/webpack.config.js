@@ -13,7 +13,7 @@ module.exports = {
     },
     module: {
         preLoaders: [
-            { test: /\.(js)$/, exclude: /node_modules/, loader: require.resolve('eslint-loader') }
+            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: require.resolve('eslint-loader') }
         ],
         loaders: [
             { test: /\.css$/, loader: 'style!css' },
