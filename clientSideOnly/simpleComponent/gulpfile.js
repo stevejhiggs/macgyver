@@ -47,7 +47,7 @@ gulp.task('webpack:build-dev', function(callback) {
 });
 
 gulp.task('test-server', function () {
-    var server = gls.static('public', 8001);
+    var server = gls.static('public', 8888);
     server.start();
 });
 
@@ -68,4 +68,5 @@ gulp.task("webpack-dev-server", function(done) {
 
 gulp.task('generate', ['webpack:build-release']);
 gulp.task('run-release', ['generate', 'test-server']);
+gulp.task('run-dev', ['generate', 'test-server']);
 gulp.task('default', ['webpack-dev-server']);
