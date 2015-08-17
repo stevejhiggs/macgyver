@@ -1,4 +1,5 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes';
+export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 
 export function increment() {
     return {
@@ -24,10 +25,10 @@ export function incrementIfOdd() {
     };
 }
 
-export function incrementAsync() {
+export function incrementAsync(delay = 1000) {
     return dispatch => {
         setTimeout(() => {
             dispatch(increment());
-        }, 1000);
+        }, delay);
     };
 }

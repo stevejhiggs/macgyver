@@ -1,4 +1,4 @@
 import React from 'react';
-import App from './reactApp/containers/App';
+import Root from './reactApp/containers/Root';
 
-React.render(<App/>, document.getElementById('root'));
+React.render(<Root/>, document.getElementById('root'));
