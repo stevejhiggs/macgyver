@@ -59,7 +59,7 @@ gulp.task("webpack-dev-server", function(done) {
     }).listen(8001, "localhost", function(err) {
             if(err) throw new gutil.PluginError("webpack-dev-server", err);
             // Server listening
-            gutil.log("[webpack-dev-server]", "http://localhost:8888/index.html");
+            gutil.log("[webpack-dev-server]", "http://localhost:8001/index.html");
 
             // keep the server alive or continue?
             //done();
