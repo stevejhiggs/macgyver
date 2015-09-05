@@ -1,13 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import App from './reactApp/containers/App';
-import configureStore from './reactApp/store/configureStore';
+import Counter from './reactApp/components/counter';
+import configureStore from './reactApp/configureStore';
 
 const store = configureStore();
 
 React.render(
     <Provider store={store}>
-        {() => <App />}
+        {() => <Counter />}
     </Provider>,
     document.getElementById('root')
 );
