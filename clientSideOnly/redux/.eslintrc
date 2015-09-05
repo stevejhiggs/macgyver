@@ -43,7 +43,7 @@
      */
     "no-shadow": 2,                  // http://eslint.org/docs/rules/no-shadow
     "no-shadow-restricted-names": 2, // http://eslint.org/docs/rules/no-shadow-restricted-names
-    "no-unused-vars": [2, {          // http://eslint.org/docs/rules/no-unused-vars
+    "no-unused-vars": [0, {          // http://eslint.org/docs/rules/no-unused-vars
       "vars": "local",
       "args": "after-used"
     }],
@@ -68,10 +68,11 @@
     "no-invalid-regexp": 2,          // http://eslint.org/docs/rules/no-invalid-regexp
     "no-irregular-whitespace": 2,    // http://eslint.org/docs/rules/no-irregular-whitespace
     "no-obj-calls": 2,               // http://eslint.org/docs/rules/no-obj-calls
-    "quote-props": 0,                // http://eslint.org/docs/rules/quote-props
+    "quote-props": 0,               // http://eslint.org/docs/rules/no-reserved-keys
     "no-sparse-arrays": 2,           // http://eslint.org/docs/rules/no-sparse-arrays
     "no-unreachable": 2,             // http://eslint.org/docs/rules/no-unreachable
     "use-isnan": 2,                  // http://eslint.org/docs/rules/use-isnan
+    "block-scoped-var": 2,           // http://eslint.org/docs/rules/block-scoped-var
 
     /**
      * Best practices
@@ -119,7 +120,7 @@
     /**
      * Style
      */
-    //"indent": [2, 4],                // http://eslint.org/docs/rules/indent
+    "indent": [0, 4],                // http://eslint.org/docs/rules/indent
     "brace-style": [2,               // http://eslint.org/docs/rules/brace-style
       "1tbs", {
         "allowSingleLine": true
@@ -151,7 +152,7 @@
     "no-new-object": 2,              // http://eslint.org/docs/rules/no-new-object
     "no-spaced-func": 2,             // http://eslint.org/docs/rules/no-spaced-func
     "no-trailing-spaces": 2,         // http://eslint.org/docs/rules/no-trailing-spaces
-    "no-extra-parens": 0,            // http://eslint.org/docs/rules/no-extra-parens
+    "no-extra-parens": 0,            // http://eslint.org/docs/rules/no-wrap-func
     "no-underscore-dangle": 0,       // http://eslint.org/docs/rules/no-underscore-dangle
     "one-var": [2, "never"],         // http://eslint.org/docs/rules/one-var
     "padded-blocks": [2, "never"],   // http://eslint.org/docs/rules/padded-blocks
@@ -165,7 +166,7 @@
     "space-before-function-paren": [2, "never"], // http://eslint.org/docs/rules/space-before-function-paren
     "space-infix-ops": 2,            // http://eslint.org/docs/rules/space-infix-ops
     "space-return-throw-case": 2,    // http://eslint.org/docs/rules/space-return-throw-case
-    "spaced-comment": 2,             // http://eslint.org/docs/rules/spaced-comment
+    "spaced-comment": 2,            // http://eslint.org/docs/rules/spaced-line-comment
 
     /**
      * JSX style

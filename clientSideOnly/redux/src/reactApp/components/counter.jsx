@@ -1,13 +1,6 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class Counter {
-    static propTypes = {
-        increment: PropTypes.func.isRequired,
-        incrementIfOdd: PropTypes.func.isRequired,
-        decrement: PropTypes.func.isRequired,
-        counter: PropTypes.number.isRequired
-    };
-
+class Counter extends Component {
     render() {
         const { increment, incrementIfOdd, decrement, counter } = this.props;
         return (
@@ -23,3 +16,13 @@ export default class Counter {
         );
     }
 }
+
+Counter.propTypes = {
+    increment: PropTypes.func.isRequired,
+    incrementIfOdd: PropTypes.func.isRequired,
+    incrementAsync: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    counter: PropTypes.number.isRequired
+};
+
+export default Counter;
