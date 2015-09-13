@@ -7,7 +7,7 @@ export default class Counter extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { count: props.startVal };
+        this.state = {count: props.startVal};
     }
 
     render() {
@@ -24,10 +24,10 @@ export default class Counter extends React.Component {
     }
 
     increment() {
-        this.setState({ count: this.state.count + 1 });
+        this.setState({count: this.state.count + 1});
     }
 
     decrement() {
-        this.setState({ count: this.state.count - 1 });
+        this.setState({count: this.state.count - 1});
     }
 }

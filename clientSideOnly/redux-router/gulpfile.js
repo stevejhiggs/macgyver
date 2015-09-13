@@ -12,7 +12,7 @@ devConfig.devtool = 'sourcemap';
 devConfig.debug = true;
 var devCompiler = webpack(devConfig);
 
-gulp.task("webpack:build-release", function(callback) {
+gulp.task("webpack:build-release", function (callback) {
     // modify some webpack config options
     var releaseConfig = Object.create(webpackConfig);
     releaseConfig.plugins = releaseConfig.plugins.concat(
@@ -27,8 +27,8 @@ gulp.task("webpack:build-release", function(callback) {
     );
 
     // run webpack
-    webpack(releaseConfig, function(err, stats) {
-        if(err) throw new gutil.PluginError("webpack:build", err);
+    webpack(releaseConfig, function (err, stats) {
+        if (err) throw new gutil.PluginError("webpack:build", err);
         gutil.log("[webpack:build]", stats.toString({
             colors: true
         }));
@@ -36,9 +36,9 @@ gulp.task("webpack:build-release", function(callback) {
     });
 });
 
-gulp.task('webpack:build-dev', function(callback) {
-    devCompiler.run(function(err, stats) {
-        if(err) throw new gutil.PluginError("webpack:build", err);
+gulp.task('webpack:build-dev', function (callback) {
+    devCompiler.run(function (err, stats) {
+        if (err) throw new gutil.PluginError("webpack:build", err);
         gutil.log("[webpack:build]", stats.toString({
             colors: true
         }));
@@ -51,19 +51,19 @@ gulp.task('test-server', function () {
     server.start();
 });
 
-gulp.task("webpack-dev-server", function(done) {
+gulp.task("webpack-dev-server", function (done) {
     new webpackDevServer(webpack(webpackConfig), {
-        stats: { colors: true },
+        stats: {colors: true},
         contentBase: "public",
         publicPath: "/generated/js/"
-    }).listen(8001, "localhost", function(err) {
-            if(err) throw new gutil.PluginError("webpack-dev-server", err);
-            // Server listening
-            gutil.log("[webpack-dev-server]", "http://localhost:8001/index.html");
+    }).listen(8001, "localhost", function (err) {
+        if (err) throw new gutil.PluginError("webpack-dev-server", err);
+        // Server listening
+        gutil.log("[webpack-dev-server]", "http://localhost:8001/index.html");
 
-            // keep the server alive or continue?
-            //done();
-        });
+        // keep the server alive or continue?
+        //done();
+    });
 });
 
 gulp.task('generate', ['webpack:build-release']);
