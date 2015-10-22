@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-@connect(state => ({routerState: state.router}))
 class CoreLayout extends React.Component {
     constructor() {
         super();
@@ -30,4 +29,5 @@ CoreLayout.propTypes = {
     children: React.PropTypes.node.isRequired
 };
 
-export default CoreLayout;
+// connects the component to the flux store
+export default connect(state => ({routerState: state.router}))(CoreLayout);

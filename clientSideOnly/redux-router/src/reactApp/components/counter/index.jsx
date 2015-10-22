@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as CounterActions from './actions';
 
-// connects the component to the flux store
-@connect(state => ({counter: state.counter}), CounterActions)
 class Counter extends Component {
     render() {
         const { increment, incrementIfOdd, decrement, counter } = this.props;
@@ -28,4 +26,5 @@ Counter.propTypes = {
     counter: PropTypes.number.isRequired
 };
 
-export default Counter;
+// connects the component to the flux store
+export default connect(state => ({counter: state.counter}), CounterActions)(Counter);
