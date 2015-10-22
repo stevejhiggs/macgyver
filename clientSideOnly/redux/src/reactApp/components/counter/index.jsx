@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as CounterActions from './actions';
 
 // connects the component to the flux store
-@connect(state => ({ counter: state.counter }), CounterActions)
+@connect(state => ({counter: state.counter}), CounterActions)
 class Counter extends Component {
     render() {
         const { increment, incrementIfOdd, decrement, counter } = this.props;

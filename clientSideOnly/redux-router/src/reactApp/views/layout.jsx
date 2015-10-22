@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-@connect(state => ({ routerState: state.router }))
+@connect(state => ({routerState: state.router}))
 class CoreLayout extends React.Component {
     constructor() {
         super();

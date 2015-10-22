@@ -17,7 +17,7 @@ var production = process.env.NODE_ENV === 'production';
 gulp.task('browserify', function () {
     browserify('./src/main.jsx', {basedir: __dirname, debug: !production})
         .transform(babelify)
-        .require('./node_modules/react/react.js', { expose: 'react'}) //expose this to make sure the dev tools work
+        .require('./node_modules/react/react.js', {expose: 'react'}) //expose this to make sure the dev tools work
         .bundle()
         .on('error', gutil.log.bind(gutil, 'Browserify Error'))
         .pipe(source('bundle.js'))
@@ -28,7 +28,7 @@ gulp.task('browserify', function () {
         .pipe(gulp.dest('./public/generated/js'));
 });
 
-gulp.task('scss', function() {
+gulp.task('scss', function () {
     gulp.src('./src/styles/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -37,13 +37,13 @@ gulp.task('scss', function() {
 });
 
 gulp.task('develop', function () {
-    nodemon({ script: 'server.js', ext: 'js', ignore: ['**/public/**/*.*'] })
+    nodemon({script: 'server.js', ext: 'js', ignore: ['**/public/**/*.*']})
         .on('restart', function () {
             console.log('restarting server')
         });
 })
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch(['./src/**/*.jsx', './src/**/*.js'], ['browserify']);
     gulp.watch(['./src/styles/**/*.scss'], ['scss']);
 });
