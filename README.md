@@ -8,8 +8,6 @@ but is no growing to encompass a variety of different examples for people to tak
 # available examples
 
 * simpleComponent - the simplest possible implementation of react. Shows how to get the views built and injected client side.
-
-* raw-flux - shows the integration of react with the flux design architecture and how they compliment each other. - credit to @rtomlinson
 * redux - shows how to use the fantastic redux flux implementation
 * redux-router - adding routing to redux
 * fluxible_fluxible-router - shows a fully isomorphic app using fluxible and the fluxible-router - probably a little easier to follow than the basic flux example
@@ -35,7 +33,3 @@ Point your browser to wherever the example is running (it will say in the consol
 ## development
 
 running via gulp will give you auto file watching, rebuilding and restarting
-
-
-
-
