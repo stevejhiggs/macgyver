@@ -7,8 +7,8 @@ import configureStore from './reactApp/configureStore';
 const store = configureStore();
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Counter />
-    </Provider>,
-    document.getElementById('root')
+  <Provider store={store}>
+    <Counter />
+  </Provider>,
+  document.getElementById('root')
 );
