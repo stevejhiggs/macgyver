@@ -15,6 +15,7 @@ var devCompiler = webpack(devConfig);
 gulp.task("webpack:build-release", function (callback) {
     // modify some webpack config options
     var releaseConfig = Object.create(webpackConfig);
+    releaseConfig.devtool = 'source-map';
     releaseConfig.plugins = releaseConfig.plugins.concat(
         new webpack.DefinePlugin({
             "process.env": {
@@ -47,7 +48,7 @@ gulp.task('webpack:build-dev', function (callback) {
 });
 
 gulp.task('test-server', function () {
-    var server = gls.static('public', 8001);
+    var server = gls.static('public', 8888);
     server.start();
 });
 
@@ -68,4 +69,5 @@ gulp.task("webpack-dev-server", function (done) {
 
 gulp.task('generate', ['webpack:build-release']);
 gulp.task('run-release', ['generate', 'test-server']);
+gulp.task('run-dev', ['generate', 'test-server']);
 gulp.task('default', ['webpack-dev-server']);
