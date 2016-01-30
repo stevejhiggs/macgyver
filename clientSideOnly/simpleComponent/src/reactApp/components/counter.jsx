@@ -1,33 +1,32 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class Counter extends React.Component {
-    static propTypes = {
-        startVal: PropTypes.number.isRequired
-    };
+export default class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: props.startVal };
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {count: props.startVal};
-    }
+  increment() {
+    this.setState({ count: this.state.count + 1 });
+  }
 
-    render() {
-        //  ::x is an es7 shortcut to this.x.bind(this);
-        return (
-            <p>
-                Clicked: {this.state.count} times
-                {' '}
-                <button onClick={::this.increment}>+</button>
-                {' '}
-                <button onClick={::this.decrement}>-</button>
-            </p>
-        );
-    }
+  decrement() {
+    this.setState({ count: this.state.count - 1 });
+  }
 
-    increment() {
-        this.setState({count: this.state.count + 1});
-    }
-
-    decrement() {
-        this.setState({count: this.state.count - 1});
-    }
+  render() {
+    return (
+      <p>
+        Clicked: {this.state.count} times
+        {' '}
+        <button onClick={() => this.increment()}>+</button>
+        {' '}
+        <button onClick={() => this.decrement()}>-</button>
+      </p>
+    );
+  }
 }
+
+Counter.propTypes = {
+  startVal: PropTypes.number.isRequired
+};

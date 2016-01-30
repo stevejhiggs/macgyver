@@ -15,6 +15,7 @@ var devCompiler = webpack(devConfig);
 gulp.task("webpack:build-release", function (callback) {
     // modify some webpack config options
     var releaseConfig = Object.create(webpackConfig);
+    releaseConfig.devtool = 'source-map';
     releaseConfig.plugins = releaseConfig.plugins.concat(
         new webpack.DefinePlugin({
             "process.env": {
