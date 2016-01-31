@@ -6,11 +6,11 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  entry: './src/client.js',
+  entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'public/generated/js'),
     publicPath: "generated/js",
-    filename: 'client.js'
+    filename: 'bundle.js'
   },
   module: {
     preLoaders: [

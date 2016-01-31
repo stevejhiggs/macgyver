@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router';
-import Routes from './reactApp/routes';
-import configureStore from './reactApp/configureStore';
+import Counter from './components/counter';
+import configureStore from './configureStore';
 
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Routes history={browserHistory}/>
+    <Counter />
   </Provider>,
   document.getElementById('root')
 );

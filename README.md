@@ -8,13 +8,13 @@ but is no growing to encompass a variety of different examples for people to tak
 # available examples
 
 * simpleComponent - the simplest possible implementation of react. Shows how to get the views built and injected client side.
-* redux - shows how to use the fantastic redux flux implementation
-* redux-router - adding routing to redux
+* redux simple component - shows how to use the fantastic redux flux implementation
+* redux react-router - adding routing to redux
 * fluxible_fluxible-router - shows a fully isomorphic app using fluxible and the fluxible-router - probably a little easier to follow than the basic flux example
 
 ## Installation
 
-    Install node
+    Install node > 5
 
     git clone https://github.com/stevejhiggs/macgyver
 
