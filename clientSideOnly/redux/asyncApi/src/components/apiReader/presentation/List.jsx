@@ -5,7 +5,7 @@ import React, { PropTypes } from 'react';
 const apiListView = (props) => (
   <div>
     <ul>
-      {props.animals.animals.map((animal, i) =>
+      {props.animals.animals.map((animal) =>
         <li key={animal.id}>{animal.name}</li>
       )}
     </ul>

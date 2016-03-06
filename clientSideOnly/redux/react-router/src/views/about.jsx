@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class AboutView extends Component {
-  constructor() {
-    super();
-  }
+const AboutView = () => (
+  <div className="view view--about">
+    <h1>This is the about view</h1>
+  </div>
+);
 
-  render() {
-    return (
-      <div className="view view--about">
-        <h1>This is the about view</h1>
-      </div>
-    );
-  }
-}
+export default AboutView;

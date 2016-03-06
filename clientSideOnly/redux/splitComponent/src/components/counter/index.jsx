@@ -1,15 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as CounterActions from './actions';
 import Counter from './presentation/Counter';
 
-class CounterContainer extends Component {
-  render() {
-    return (
-        <Counter {...this.props }/>
-    );
-  }
-}
+const CounterContainer = (props) => (
+  <Counter {...props } />
+);
 
 CounterContainer.propTypes = {
   increment: PropTypes.func.isRequired,

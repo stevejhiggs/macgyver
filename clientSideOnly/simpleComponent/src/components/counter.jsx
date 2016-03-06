@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
+// as this component has state it cant be written as a pure function
 export default class Counter extends Component {
   constructor(props) {
     super(props);

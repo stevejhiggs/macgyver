@@ -12,8 +12,8 @@ const routes = (props) => {
   return (
     <Router history={history}>
       <Route path="/" component={LayoutView}>
-        <IndexRoute component={HomeView}/>
-        <Route path="about" component={AboutView}/>
+        <IndexRoute component={HomeView} />
+        <Route path="about" component={AboutView} />
         <Route path="*" component={NotFoundView} />
       </Route>
     </Router>

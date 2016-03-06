@@ -17,6 +17,6 @@
         "gulp": "^3.9.0",
         "gulp-live-server": "0.0.29",
         "gulp-util": "^3.0.7",
-        "gulp-webpack-es6-pipeline": "^1.0.1"
+        "gulp-webpack-es6-pipeline": "^2.0.0"
     }
 }

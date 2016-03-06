@@ -1,15 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as ApiActions from './actions';
 import List from './presentation/List';
 
-class ApiContainer extends Component {
-  render() {
-    return (
-        <List {...this.props }/>
-    );
-  }
-}
+const ApiContainer = (props) => (
+  <List {...props } />
+);
 
 ApiContainer.propTypes = {
   fetchAnimals: PropTypes.func.isRequired,
