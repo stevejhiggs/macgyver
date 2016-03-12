@@ -1,16 +1,17 @@
 import React, { PropTypes } from 'react';
+import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 
 // simple presentational components can just use the simple function syntax
 // for components
 const apiListView = (props) => (
   <div>
-    <ul>
+    <ListGroup>
       {props.animals.animals.map((animal) =>
-        <li key={animal.id}>{animal.name}</li>
+        <ListGroupItem key={animal.id}>{animal.name}</ListGroupItem>
       )}
-    </ul>
+    </ListGroup>
     <p>
-      <button onClick={ props.fetchAnimals }>get animals</button>
+      <Button bsStyle="primary" onClick={ props.fetchAnimals }>get animals</Button>
     </p>
   </div>
 );

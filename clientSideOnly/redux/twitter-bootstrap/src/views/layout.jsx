@@ -1,18 +1,22 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
+import { ButtonGroup } from 'react-bootstrap';
 
 const CoreLayout = (props) => (
   <div className="page-container">
-    <h1>I am the container</h1>
     <header>
-      Links:
-      {' '}
-      <Link to="/">Home</Link>
-      {' '}
-      <Link to="/about">About</Link>
-      {' '}
-      <Link to="/notexist">404</Link>
+      <ButtonGroup justified>
+        <IndexLink className="btn btn-info" role="button" activeClassName="active" to="/">
+          Home
+        </IndexLink>
+        <Link className="btn btn-info" role="button" activeClassName="active" to="/about">
+          About
+        </Link>
+        <Link className="btn btn-info" role="button" activeClassName="active" to="/notexist">
+          404
+        </Link>
+      </ButtonGroup>
     </header>
     <div className="view-container">
       { props.children }
