@@ -5,4 +5,4 @@ require('babel-register')({
     "react"
   ]
 });
-require('./src/server.js');
+require('./src/server');

@@ -4,6 +4,7 @@ import Hapi from 'hapi';
 import Good from 'good';
 import GoodConsole from 'good-console';
 import Inert from 'inert';
+import registerRoutes from './routes';
 
 // Create a server with a host and port
 const server = new Hapi.Server({
@@ -40,25 +41,7 @@ server.register([
     return server.log('error', err);
   }
 
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: {
-        file: 'public/index.html'
-    }
-  });
-
-  server.route({
-    method: 'GET',
-    path: '/js/{param*}',
-    handler: {
-        directory: {
-            path: 'public/generated/js',
-            redirectToSlash: true,
-            index: true
-        }
-    }
-  });
+  registerRoutes(server);
 
   server.start(() => {
     server.log(`Server started at ${server.info.uri}`);
