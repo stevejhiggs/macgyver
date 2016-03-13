@@ -9,7 +9,7 @@ const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Routes history={browserHistory} />
+    <Routes history={browserHistory} store={store}/>
   </Provider>,
   document.getElementById('root')
 );
