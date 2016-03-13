@@ -1,19 +1,27 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import { Provider } from 'react-redux';
 import { createMemoryHistory, match, RouterContext } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from '../configureStore';
-import Routes from '../routes';
+import routes from '../routes';
 
-const HtmlWrapper = () => (
-  <html>
-  <head></head>
-  <body>
-    <div id="root">
-    </div>
-  </body>
-  <script src="/js/bundle.js"></script>
-  </html>
+const wrapInHtml = (content, initialState) => (
+  `
+    <!doctype html>
+    <html>
+      <head>
+        <title>Redux Universal Example</title>
+      </head>
+      <body>
+        <div id="root">${content}</div>
+        <script>
+          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
+        </script>
+        <script src="/js/bundle.js"></script>
+      </body>
+    </html>
+    `
 );
 
 const registerServerRoutes = (server) => {
@@ -37,7 +45,29 @@ const registerServerRoutes = (server) => {
       const store = configureStore(memoryHistory);
       const history = syncHistoryWithStore(memoryHistory, store);
 
-      reply('<!doctype html>\n' + renderToString(<HtmlWrapper/>));
+      match({ history, routes, location: request.path }, (error, redirectLocation, renderProps) => {
+        if (error) {
+          return reply(error.message).code(500);
+        }
+
+        if (redirectLocation) {
+          return reply.redirect(redirectLocation.pathname + redirectLocation.search);
+        }
+
+        if (renderProps) {
+          const content = renderToString(
+            <Provider store={store}>
+              <RouterContext {...renderProps}/>
+            </Provider>
+          )
+
+          const initialState = store.getState();
+
+          return reply(wrapInHtml(content, initialState));
+        }
+
+        reply.continue();
+      });
     }
   });
 };
