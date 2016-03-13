@@ -2,15 +2,24 @@
 
 Building a better mullet.
 
-Inspired by mullet.io it's a combination of react on the frontend and hapi.js on the backend. It started as a simple one off client example
-but is no growing to encompass a variety of different examples for people to take apart and play with.
+Inspired by mullet.io it's a combination of react on the frontend and hapi.js on the backend. It started as a simple one off client example but is now growing to encompass a variety of different examples for people to take apart and play with.
 
-# available examples
+# Available examples
+
+## Client side
+These operate without any sort of server side rendering
 
 * simpleComponent - the simplest possible implementation of react. Shows how to get the views built and injected client side.
-* redux simple component - shows how to use the fantastic redux flux implementation
-* redux react-router - adding routing to redux
-* fluxible_fluxible-router - shows a fully isomorphic app using fluxible and the fluxible-router - probably a little easier to follow than the basic flux example
+* redux -> simple component - shows how to use the fantastic redux flux implementation
+* redux -> react-router - adding routing to redux
+* redux -> async api - shows how to handle async calls to external services
+* redux -> splitComponent - covers splitting components up into stateful and presentational sub-components
+* redux -> twitterBootstrap - using react-bootstrap to make things prettier
+
+## Universal
+Markup is rendered both server and client side.
+
+* redux -> react-router - universal version of the client side react router demo
 
 ## Installation
 
