@@ -4,7 +4,7 @@ import Hapi from 'hapi';
 import Good from 'good';
 import GoodConsole from 'good-console';
 import Inert from 'inert';
-import registerRoutes from './routes';
+import registerServerRoutes from './routes';
 
 // Create a server with a host and port
 const server = new Hapi.Server({
@@ -41,7 +41,7 @@ server.register([
     return server.log('error', err);
   }
 
-  registerRoutes(server);
+  registerServerRoutes(server);
 
   server.start(() => {
     server.log(`Server started at ${server.info.uri}`);

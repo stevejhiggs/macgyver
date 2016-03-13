@@ -1,5 +1,9 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import { createMemoryHistory, match, RouterContext } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+import configureStore from '../configureStore';
+import Routes from '../routes';
 
 const HtmlWrapper = () => (
   <html>
@@ -12,7 +16,7 @@ const HtmlWrapper = () => (
   </html>
 );
 
-const registerRoutes = (server) => {
+const registerServerRoutes = (server) => {
   server.route({
     method: 'GET',
     path: '/js/{param*}',
@@ -29,9 +33,13 @@ const registerRoutes = (server) => {
     method: 'GET',
     path: '/{param*}',
     handler: (request, reply) => {
+      const memoryHistory = createMemoryHistory(request.path);
+      const store = configureStore(memoryHistory);
+      const history = syncHistoryWithStore(memoryHistory, store);
+
       reply('<!doctype html>\n' + renderToString(<HtmlWrapper/>));
     }
   });
 };
 
-export default registerRoutes;
+export default registerServerRoutes;
