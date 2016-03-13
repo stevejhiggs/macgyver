@@ -15,14 +15,6 @@ const HtmlWrapper = () => (
 const registerRoutes = (server) => {
   server.route({
     method: 'GET',
-    path: '/',
-    handler: (request, reply) => {
-      reply('<!doctype html>\n' + renderToString(<HtmlWrapper/>));
-    }
-  });
-
-  server.route({
-    method: 'GET',
     path: '/js/{param*}',
     handler: {
       directory: {
@@ -30,6 +22,14 @@ const registerRoutes = (server) => {
           redirectToSlash: true,
           index: true
       }
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/{param*}',
+    handler: (request, reply) => {
+      reply('<!doctype html>\n' + renderToString(<HtmlWrapper/>));
     }
   });
 };
