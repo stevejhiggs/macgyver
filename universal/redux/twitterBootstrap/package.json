@@ -1,0 +1,36 @@
+{
+  "name": "macgyver",
+  "version": "0.0.1",
+  "description": "Inspired by mullet.io. A gulp driven reactjs framework",
+  "main": "server.js",
+  "scripts": {},
+  "engines": {
+    "node": "^5.0.0"
+  },
+  "author": "Steve Higgs <stevejhiggs@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "react-bootstrap": "^0.28.3",
+    "babel-register": "^6.7.2",
+    "good": "^6.6.0",
+    "good-console": "^5.3.1",
+    "hapi": "^13.2.1",
+    "history": "^2.0.1",
+    "inert": "^3.2.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "react-router": "^2.0.1",
+    "react-router-redux": "^4.0.0",
+    "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-live-server": "0.0.29",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-util": "^3.0.7",
+    "gulp-webpack-es6-pipeline": "^2.1.0"
+  }
+}
