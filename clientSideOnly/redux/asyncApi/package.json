@@ -11,18 +11,18 @@
   "license": "MIT",
   "dependencies": {
     "gulp-nodemon": "^2.0.6",
-    "hapi": "^13.2.1",
+    "hapi": "^13.3.0",
     "isomorphic-fetch": "^2.2.1",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-redux": "^4.4.0",
-    "redux": "^3.3.1",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.1",
     "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-live-server": "0.0.29",
     "gulp-util": "^3.0.7",
-    "gulp-webpack-es6-pipeline": "^2.0.0"
+    "gulp-webpack-es6-pipeline": "^3.0.0"
   }
 }

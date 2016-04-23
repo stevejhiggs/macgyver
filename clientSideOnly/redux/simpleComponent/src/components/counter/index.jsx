@@ -7,13 +7,13 @@ const Counter = (props) => {
 
   return (
     <p>
-      Clicked: { counter.count } times
+      Clicked: {counter.count} times
       {' '}
-      <button onClick={ increment }>+</button>
+      <button onClick={increment}>+</button>
       {' '}
-      <button onClick={ decrement }>-</button>
+      <button onClick={decrement}>-</button>
       {' '}
-      <button onClick={ incrementIfOdd }>Increment if odd</button>
+      <button onClick={incrementIfOdd}>Increment if odd</button>
     </p>
   );
 };

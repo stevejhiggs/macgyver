@@ -10,7 +10,7 @@ const apiListView = (props) => (
       )}
     </ul>
     <p>
-      <button onClick={ props.fetchAnimals }>get animals</button>
+      <button onClick={props.fetchAnimals}>get animals</button>
     </p>
   </div>
 );

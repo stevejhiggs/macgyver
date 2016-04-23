@@ -15,7 +15,7 @@ const CoreLayout = (props) => (
       <Link to="/notexist">404</Link>
     </header>
     <div className="view-container">
-      { props.children }
+      {props.children}
     </div>
   </div>
 );
