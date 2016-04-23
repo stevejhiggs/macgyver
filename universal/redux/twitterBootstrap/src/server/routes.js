@@ -17,7 +17,7 @@ const wrapInHtml = (content, initialState) => (
       <body>
         <div id="root">${content}</div>
         <script>
-          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
+          window.reduxInitialState = ${JSON.stringify(initialState)}
         </script>
         <script src="/js/bundle.js"></script>
       </body>

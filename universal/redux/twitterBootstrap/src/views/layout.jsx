@@ -19,7 +19,7 @@ const CoreLayout = (props) => (
       </ButtonGroup>
     </header>
     <div className="view-container">
-      { props.children }
+      {props.children}
     </div>
   </div>
 );

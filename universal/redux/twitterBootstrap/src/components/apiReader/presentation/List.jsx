@@ -11,7 +11,7 @@ const apiListView = (props) => (
       )}
     </ListGroup>
     <p>
-      <Button bsStyle="primary" onClick={ props.fetchAnimals }>get animals</Button>
+      <Button bsStyle="primary" onClick={props.fetchAnimals}>get animals</Button>
     </p>
   </div>
 );

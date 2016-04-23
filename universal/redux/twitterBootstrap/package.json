@@ -31,6 +31,6 @@
     "gulp-live-server": "0.0.29",
     "gulp-nodemon": "^2.0.6",
     "gulp-util": "^3.0.7",
-    "gulp-webpack-es6-pipeline": "^2.1.0"
+    "gulp-webpack-es6-pipeline": "^3.0.0"
   }
 }
