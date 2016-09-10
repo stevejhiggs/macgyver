@@ -4,12 +4,17 @@ import * as ApiActions from './actions';
 import List from './presentation/List';
 
 const ApiContainer = (props) => (
-  <List {...props } />
+  <List {...props} />
 );
 
 ApiContainer.propTypes = {
   fetchAnimals: PropTypes.func.isRequired,
-  animals: PropTypes.object.isRequired
+  animals: React.PropTypes.shape({
+    animals: React.PropTypes.array({
+      id: React.PropTypes.number.isRequired,
+      name: React.PropTypes.string.isRequired
+    })
+  })
 };
 
 // connects the component to the flux store

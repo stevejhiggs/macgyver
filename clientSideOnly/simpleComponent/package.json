@@ -10,13 +10,13 @@
     "author": "Steve Higgs <stevejhiggs@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "react": "^15.0.1",
-        "react-dom": "^15.0.1"
+        "react": "^15.3.1",
+        "react-dom": "^15.3.1"
     },
     "devDependencies": {
         "gulp": "^3.9.1",
-        "gulp-live-server": "0.0.29",
+        "gulp-live-server": "0.0.30",
         "gulp-util": "^3.0.7",
-        "gulp-webpack-es6-pipeline": "^3.0.0"
+        "gulp-webpack-es6-pipeline": "^6.0.0"
     }
 }

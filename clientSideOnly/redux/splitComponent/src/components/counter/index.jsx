@@ -4,7 +4,7 @@ import * as CounterActions from './actions';
 import Counter from './presentation/Counter';
 
 const CounterContainer = (props) => (
-  <Counter {...props } />
+  <Counter {...props} />
 );
 
 CounterContainer.propTypes = {

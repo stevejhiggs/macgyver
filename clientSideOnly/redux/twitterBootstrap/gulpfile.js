@@ -9,7 +9,7 @@ es6Pipeline.registerBuildGulpTasks(
   gulp,
   {
     entryPoints: {
-      'bundle': path.join(__dirname,'/src/index.js')
+      'bundle': path.join(__dirname,'/src/index.jsx')
     },
     outputDir: path.join(__dirname, 'public/generated/js')
   }

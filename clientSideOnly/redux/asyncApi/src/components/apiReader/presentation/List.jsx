@@ -17,7 +17,12 @@ const apiListView = (props) => (
 
 apiListView.propTypes = {
   fetchAnimals: PropTypes.func.isRequired,
-  animals: PropTypes.object.isRequired
+  animals: React.PropTypes.shape({
+    animals: React.PropTypes.array({
+      id: React.PropTypes.number.isRequired,
+      name: React.PropTypes.string.isRequired
+    })
+  })
 };
 
 export default apiListView;
