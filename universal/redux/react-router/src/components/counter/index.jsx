@@ -2,20 +2,17 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as CounterActions from './actions';
 
-const Counter = (props) => {
-  const { increment, incrementIfOdd, decrement, counter } = props;
-  return (
-    <p>
-      Clicked: {counter.count} times
-      {' '}
-      <button onClick={increment}>+</button>
-      {' '}
-      <button onClick={decrement}>-</button>
-      {' '}
-      <button onClick={incrementIfOdd}>Increment if odd</button>
-    </p>
-  );
-};
+const Counter = (props) =>
+  <p>
+    Clicked: {props.counter.count} times
+    {' '}
+    <button onClick={props.increment}>+</button>
+    {' '}
+    <button onClick={props.decrement}>-</button>
+    {' '}
+    <button onClick={props.incrementIfOdd}>Increment if odd</button>
+  </p>
+;
 
 Counter.propTypes = {
   increment: PropTypes.func.isRequired,

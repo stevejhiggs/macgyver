@@ -2,7 +2,6 @@
 
 import Hapi from 'hapi';
 import Good from 'good';
-import GoodConsole from 'good-console';
 import Inert from 'inert';
 import registerServerRoutes from './routes';
 
@@ -26,13 +25,17 @@ server.register([
   {
     register: Good,
     options: {
-      opsInterval: 1000,
-      reporters: [{
-        reporter: GoodConsole,
-        events: { log: '*', error: '*', request: '*' },
-        config: {
-        }
-      }]
+      ops: {
+        interval: 1000,
+      },
+      reporters: {
+        myConsoleReporter: [
+          {
+            module: 'good-console',
+            args: [{ log: '*', error: '*', request: '*' }]
+          }
+        ]
+      }
     }
   },
   Inert
