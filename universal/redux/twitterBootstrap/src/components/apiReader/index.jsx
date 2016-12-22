@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as ApiActions from './actions';
 import List from './presentation/List';
 
-const ApiContainer = (props) => (
+const ApiContainer = props => (
   <List {...props} />
 );
 

@@ -3,10 +3,10 @@ import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 
 // simple presentational components can just use the simple function syntax
 // for components
-const apiListView = (props) => (
+const apiListView = props => (
   <div>
     <ListGroup>
-      {props.animals.animals.map((animal) =>
+      {props.animals.animals.map(animal =>
         <ListGroupItem key={animal.id}>{animal.name}</ListGroupItem>
       )}
     </ListGroup>

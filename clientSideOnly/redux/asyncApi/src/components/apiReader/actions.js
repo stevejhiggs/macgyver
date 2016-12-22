@@ -18,7 +18,7 @@ function receiveAnimals(response) {
 }
 
 export function fetchAnimals() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(requestAnimals());
     return fetch('http://localhost:8000/')
       .then(response => response.json())

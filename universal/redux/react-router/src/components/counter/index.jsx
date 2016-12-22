@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as CounterActions from './actions';
 
-const Counter = (props) =>
+const Counter = props =>
   <p>
     Clicked: {props.counter.count} times
     {' '}

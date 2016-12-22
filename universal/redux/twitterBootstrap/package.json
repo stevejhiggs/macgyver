@@ -11,26 +11,26 @@
   "license": "MIT",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "react-bootstrap": "^0.30.3",
-    "babel-register": "^6.14.0",
-    "good": "^7.0.2",
-    "good-console": "^6.1.2",
-    "hapi": "^15.0.3",
-    "history": "^4.0.0-2",
-    "inert": "^4.0.2",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.8.0",
-    "react-router-redux": "^4.0.5",
+    "react-bootstrap": "^0.30.7",
+    "babel-register": "^6.18.0",
+    "good": "^7.1.0",
+    "good-console": "^6.2.0",
+    "hapi": "^16.0.2",
+    "history": "^4.5.0",
+    "inert": "^4.0.4",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-live-server": "0.0.30",
-    "gulp-nodemon": "^2.1.0",
+    "gulp-nodemon": "^2.2.1",
     "gulp-util": "^3.0.7",
-    "gulp-webpack-es6-pipeline": "^6.0.0"
+    "gulp-webpack-es6-pipeline": "^7.1.0"
   }
 }

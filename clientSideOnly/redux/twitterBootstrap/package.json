@@ -10,16 +10,16 @@
   "author": "Steve Higgs <stevejhiggs@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "gulp-nodemon": "^2.1.0",
-    "hapi": "^15.0.3",
-    "history": "^4.0.0-2",
+    "gulp-nodemon": "^2.2.1",
+    "hapi": "^16.0.2",
+    "history": "^4.5.0",
     "isomorphic-fetch": "^2.2.1",
-    "react": "^15.3.1",
-    "react-bootstrap": "^0.30.3",
-    "react-dom": "^15.3.1",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.8.0",
-    "react-router-redux": "^4.0.5",
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0"
   },
@@ -27,6 +27,6 @@
     "gulp": "^3.9.1",
     "gulp-live-server": "0.0.30",
     "gulp-util": "^3.0.7",
-    "gulp-webpack-es6-pipeline": "^6.0.0"
+    "gulp-webpack-es6-pipeline": "^7.1.0"
   }
 }

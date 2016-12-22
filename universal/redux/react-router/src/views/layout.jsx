@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-const CoreLayout = (props) => (
+const CoreLayout = props => (
   <div className="page-container">
     <h1>I am the container</h1>
     <header>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, IndexLink } from 'react-router';
 import { ButtonGroup } from 'react-bootstrap';
 
-const CoreLayout = (props) => (
+const CoreLayout = props => (
   <div className="page-container">
     <header>
       <ButtonGroup justified>

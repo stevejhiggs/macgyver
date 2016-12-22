@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 // simple presentational components can just use the simple function syntax
 // for components
-const counterView = (props) =>
+const counterView = props =>
   <p>
     Clicked: {props.counter.count} times
     {' '}

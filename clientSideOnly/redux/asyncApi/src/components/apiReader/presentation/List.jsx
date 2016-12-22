@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react';
 
 // simple presentational components can just use the simple function syntax
 // for components
-const apiListView = (props) => (
+const apiListView = props => (
   <div>
     <ul>
-      {props.animals.animals.map((animal) =>
+      {props.animals.animals.map(animal =>
         <li key={animal.id}>{animal.name}</li>
       )}
     </ul>

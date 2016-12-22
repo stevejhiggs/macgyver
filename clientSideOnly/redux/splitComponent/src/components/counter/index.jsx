@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as CounterActions from './actions';
 import Counter from './presentation/Counter';
 
-const CounterContainer = (props) => (
+const CounterContainer = props => (
   <Counter {...props} />
 );
 

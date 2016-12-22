@@ -18,7 +18,7 @@ function receiveAnimals(response) {
 }
 
 export function fetchAnimals() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(requestAnimals());
     return fetch('/api')
       .then(response => response.json())
