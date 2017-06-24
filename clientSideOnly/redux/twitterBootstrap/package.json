@@ -1,32 +1,27 @@
 {
-  "name": "macgyver",
-  "version": "0.0.1",
-  "description": "Inspired by mullet.io. A gulp driven reactjs framework",
-  "main": "server.js",
-  "scripts": {},
-  "engines": {
-    "node": "^5.0.0"
-  },
-  "author": "Steve Higgs <stevejhiggs@gmail.com>",
-  "license": "MIT",
+  "name": "react-router",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "gulp-nodemon": "^2.2.1",
-    "hapi": "^16.0.2",
-    "history": "^4.5.0",
-    "isomorphic-fetch": "^2.2.1",
-    "react": "^15.4.1",
-    "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.1",
-    "react-redux": "^5.0.1",
-    "react-router": "^3.0.0",
-    "react-router-redux": "^4.0.7",
-    "redux": "^3.6.0",
-    "redux-thunk": "^2.1.0"
+    "bootstrap": "3",
+    "history": "^4.6.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "next",
+    "redux": "^3.7.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-live-server": "0.0.30",
-    "gulp-util": "^3.0.7",
-    "gulp-webpack-es6-pipeline": "^7.1.0"
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

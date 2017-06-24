@@ -1,25 +1,22 @@
 {
-  "name": "macgyver",
-  "version": "0.0.1",
-  "description": "Inspired by mullet.io. A gulp driven reactjs framework",
-  "main": "server.js",
-  "scripts": {},
-  "engines": {
-    "node": "^5.0.0"
-  },
-  "author": "Steve Higgs <stevejhiggs@gmail.com>",
-  "license": "MIT",
+  "name": "split-component",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-redux": "^5.0.1",
-    "redux": "^3.6.0",
-    "redux-thunk": "^2.1.0"
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-live-server": "0.0.30",
-    "gulp-util": "^3.0.7",
-    "gulp-webpack-es6-pipeline": "^7.1.0"
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

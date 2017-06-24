@@ -3,14 +3,29 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 
 export default function configureStore(initialState) {
+
+  const enhancers = [];
+  const middleware = [
+    thunk
+  ];
+
+  if (process.env.NODE_ENV === 'development') {
+    const devToolsExtension = window.devToolsExtension
+
+    if (typeof devToolsExtension === 'function') {
+      enhancers.push(devToolsExtension())
+    }
+  }
+
+  const composedEnhancers = compose(
+    applyMiddleware(...middleware),
+    ...enhancers
+  );
+
   const store = createStore(
     reducers,
     initialState,
-    compose(
-      applyMiddleware(
-        thunk
-      )
-    )
+    composedEnhancers
   );
 
   return store;
