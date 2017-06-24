@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+
+export interface Props {
+  startVal: number;
+}
+
+interface State {
+  count: number;
+}
 
 // as this component has state it cant be written as a pure function
-export default class Counter extends Component {
-  constructor(props) {
+export default class Counter extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { count: props.startVal };
   }
@@ -28,7 +35,3 @@ export default class Counter extends Component {
     );
   }
 }
-
-Counter.propTypes = {
-  startVal: PropTypes.number.isRequired
-};
