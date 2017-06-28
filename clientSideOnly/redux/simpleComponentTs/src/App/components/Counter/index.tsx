@@ -1,30 +1,19 @@
-import * as React from 'react';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import * as CounterActions from './actions';
-import { bindActionCreators } from "redux"
+import { Counter, Props } from './presentation/Counter';
+import { IRootState } from '../../../reducers';
 
-export interface Props {
-  startVal: number;
-  counter:{
-    count: number;
-  },
-  increment: any;
-  decrement: any;
-  incrementIfOdd: any;
-}
+type ConnectedProps = Pick<Props, 'startVal'>; 
 
-const Counter:React.SFC<Props> = (props: Props) =>
-  <p>
-    Clicked: {props.counter.count} times
-    {' '}
-    <button onClick={props.increment}>+</button>
-    {' '}
-    <button onClick={props.decrement}>-</button>
-    {' '}
-    <button onClick={props.incrementIfOdd}>Increment if odd</button>
-  </p>;
+const mapStateToProps = (state: any, ownProps: ConnectedProps) => ({
+  counter: state.counter,
+});
 
-
+const mapDispatchToProps = (dispatch: Dispatch<IRootState>) => bindActionCreators({
+  increment: CounterActions.increment,
+  decrement: CounterActions.decrement,
+}, dispatch);
 
 // connects the component to the flux store
-export default connect<any, any, any>(state => ({ counter: state.counter }), CounterActions )(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

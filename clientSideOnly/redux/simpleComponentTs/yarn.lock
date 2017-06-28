@@ -4872,7 +4872,13 @@ type-is@~1.6.15:
     media-typer "0.3.0"
     mime-types "~2.1.15"
 
-typescript-fsa@^2.3.1:
+typescript-fsa-reducers@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/typescript-fsa-reducers/-/typescript-fsa-reducers-0.4.4.tgz#54a8b8fd0b9cf5fffafad575b6c93b97fa4dc568"
+  dependencies:
+    typescript-fsa "^2.0.0"
+
+typescript-fsa@^2.0.0, typescript-fsa@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/typescript-fsa/-/typescript-fsa-2.3.1.tgz#e0f94f316aa3ea9b3a3ada10fbfeec4287c952b0"
 

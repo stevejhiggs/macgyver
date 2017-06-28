@@ -1,18 +1,21 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 import Counter from './components/Counter';
+import configureStore from '../configureStore';
 
-// as this component does not have state or actions it can be written as a pure function
+const store = configureStore();
+
 const app = () => (
+  <Provider store={store}>
   <div className="App">
     <div className="App-header">
-      <h2>MacGyver in the house</h2>
+      <h2>Split component with redux state</h2>
     </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-      <Counter startVal={5} />
-    </p>
+    <Counter startVal={5}/>
   </div>
+  </Provider>
 );
+
 
 export default app;
