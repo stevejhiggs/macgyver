@@ -6,7 +6,7 @@ import { IRootState } from '../../../reducers';
 
 type ConnectedProps = Pick<Props, 'startVal'>; 
 
-const mapStateToProps = (state: any, ownProps: ConnectedProps) => ({
+const mapStateToProps = (state: IRootState, ownProps: ConnectedProps) => ({
   counter: state.counter,
 });
 
