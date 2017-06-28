@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/node": "^8.0.5",
+    "@types/react-redux": "^4.4.45",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
