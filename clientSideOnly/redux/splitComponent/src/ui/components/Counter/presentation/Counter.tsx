@@ -1,8 +1,8 @@
 import * as React from 'react';
-import * as CounterActions from '../../../../state/counter/actions';
+import * as CounterActions from '../../../../state/count/actions';
 
 export interface Props {
-  startVal: number;
+  incrementBy: number;
   counter: {
     count: number;
   };
@@ -13,11 +13,11 @@ export interface Props {
 export const Counter: React.SFC<Props> = (props: Props) =>
 (
   <p>
-    Clicked: {props.counter.count} times
+    Global count: {props.counter.count}
     {' '}
-    <button onClick={() => { props.increment(); }}>+</button>
+    <button onClick={() => { props.increment({incrementBy: props.incrementBy}); }}>+</button>
     {' '}
-    <button onClick={() => { props.decrement(); }}>-</button>
+    <button onClick={() => { props.decrement({incrementBy: props.incrementBy}); }}>-</button>
 </p>
 );
 

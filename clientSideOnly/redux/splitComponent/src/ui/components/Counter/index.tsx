@@ -2,7 +2,7 @@ import * as CounterActions from '../../../state/count/actions';
 import { Counter, Props } from './presentation/Counter';
 import { bindActionCreators, connect, RootState, Dispatch } from '../../../state';
 
-type ConnectedProps = Pick<Props, 'startVal'>; 
+type ConnectedProps = Pick<Props, 'incrementBy'>; 
 
 const mapStateToProps = (state: RootState, ownProps: ConnectedProps) => ({
   counter: state.counter,
