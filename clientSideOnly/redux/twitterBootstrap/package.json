@@ -1,27 +1,37 @@
 {
-  "name": "react-router",
+  "name": "simplecomponentts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "3",
+    "@types/history": "^4.6.0",
+    "@types/jest": "^20.0.2",
+    "@types/node": "^8.0.5",
+    "@types/react": "^15.0.31",
+    "@types/react-bootstrap": "^0.0.52",
+    "@types/react-dom": "^15.5.1",
+    "@types/react-redux": "^4.4.45",
+    "@types/react-router-dom": "^4.0.5",
+    "@types/react-router-redux": "^5.0.3",
+    "bootstrap": "^3.3.7",
     "history": "^4.6.3",
-    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",
-    "redux": "^3.7.0",
-    "redux-thunk": "^2.2.0"
+    "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0",
+    "typescript-fsa": "^2.3.1",
+    "typescript-fsa-reducers": "^0.4.4"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts-ts": "2.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
   }
 }
