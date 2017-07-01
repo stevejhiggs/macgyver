@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import reducers from './reducers';
+import reducers from './reducer';
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState?: {}) {
 
   const enhancers = [];
   const middleware = [
@@ -10,10 +10,10 @@ export default function configureStore(initialState) {
   ];
 
   if (process.env.NODE_ENV === 'development') {
-    const devToolsExtension = window.devToolsExtension
+    const devToolsExtension = (window as any).devToolsExtension;
 
     if (typeof devToolsExtension === 'function') {
-      enhancers.push(devToolsExtension())
+      enhancers.push(devToolsExtension());
     }
   }
 

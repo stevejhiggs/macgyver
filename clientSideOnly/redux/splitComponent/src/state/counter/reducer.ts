@@ -1,4 +1,4 @@
-import { reducerWithInitialState } from "typescript-fsa-reducers";
+import { reducerWithInitialState } from 'typescript-fsa-reducers';
 import {increment, decrement} from './actions';
 
 export type State = { count: number };
