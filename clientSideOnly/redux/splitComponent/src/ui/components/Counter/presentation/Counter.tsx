@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { EmptyActionCreator } from 'typescript-fsa';
+import * as CounterActions from '../../../../state/counter/actions';
 
 export interface Props {
   startVal: number;
   counter: {
     count: number;
   };
-  increment: EmptyActionCreator;
-  decrement: EmptyActionCreator;
+  increment: typeof CounterActions.increment;
+  decrement: typeof CounterActions.decrement;
 }
 
 export const Counter: React.SFC<Props> = (props: Props) =>
