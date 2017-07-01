@@ -1,4 +1,4 @@
-import * as CounterActions from '../../../state/counter/actions';
+import * as CounterActions from '../../../state/count/actions';
 import { Counter, Props } from './presentation/Counter';
 import { bindActionCreators, connect, RootState, Dispatch } from '../../../state';
 

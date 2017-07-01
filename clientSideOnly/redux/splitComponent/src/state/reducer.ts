@@ -1,5 +1,5 @@
 import { combineReducers, Dispatch as ReduxDispatch } from 'redux';
-import { reducer as counterReducer, State as counterState } from './counter/reducer';
+import { reducer as counterReducer, State as counterState } from './count/reducer';
 
 export interface RootState {
   counter: counterState;
