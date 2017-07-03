@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.activeNav, .activeNav:focus, .activeNav:hover {
+  text-decoration: none;
+  color: black;
+  text-shadow: 0 0 4px rgba(150, 150, 150, 0.75);
+}
