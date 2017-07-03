@@ -1,27 +1,18 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
+
 import reducers from './reducer';
 
-declare const window: Window & { devToolsExtension: Function };
-
 export default function configureStore(initialState?: {}) {
-
-  const enhancers = [];
   const middleware = [
     thunk
   ];
 
-  if (process.env.NODE_ENV !== 'development') {
-    const devToolsExtension = window.devToolsExtension;
+  const composeEnhancers = composeWithDevTools({});
 
-    if (typeof devToolsExtension === 'function') {
-      enhancers.push(devToolsExtension());
-    }
-  }
-
-  const composedEnhancers = compose(
-    applyMiddleware(...middleware),
-    ...enhancers
+  const composedEnhancers = composeEnhancers(
+    applyMiddleware(...middleware)
   );
 
   const store = createStore(
