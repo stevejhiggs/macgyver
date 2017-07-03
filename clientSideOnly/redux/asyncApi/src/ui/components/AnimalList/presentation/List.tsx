@@ -3,7 +3,7 @@ import {Animal} from '../../../../state/animals/reducer';
 
 export interface Props { 
   animals: Animal[];
-  loadAnimals: () => Promise<Animal[]>;
+  loadAnimals: () => () => Promise<Animal[]>;
 }
 
 export const AnimalListView: React.SFC<Props> = (props: Props) =>
