@@ -9,7 +9,7 @@ const mapStateToProps = (state: RootState, ownProps: ConnectedProps) => ({
 });
 
 const loadAnimals = () => {
-  return (dispatch: Dispatch) => AnimalActions.loadAnimalWorker(dispatch, {})
+  return (dispatch: Dispatch) => AnimalActions.loadAnimalWorker(dispatch, {});
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
