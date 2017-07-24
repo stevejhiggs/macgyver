@@ -9,12 +9,18 @@ const mapStateToProps = (state: RootState, ownProps: ConnectedProps) => ({
 });
 
 const loadAnimals = () => {
-  return (dispatch: Dispatch) => AnimalActions.loadAnimalWorker(dispatch, {});
+  return (dispatch: Dispatch) => AnimalActions.loadAnimalWorker(
+    dispatch, 
+    {}
+  );
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
-  loadAnimals: loadAnimals
-}, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(
+  {
+    loadAnimals: loadAnimals
+  }, 
+  dispatch
+);
 
 // connects the component to the flux store
 export default connect(mapStateToProps, mapDispatchToProps)(AnimalListView);

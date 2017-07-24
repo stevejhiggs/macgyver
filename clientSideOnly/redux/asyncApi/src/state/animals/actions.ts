@@ -1,6 +1,6 @@
 import actionCreatorFactory from 'typescript-fsa';
 import wrapAsyncWorker from '../wrapAsyncWorker';
-import {Animal} from './reducer';
+import { Animal } from './reducer';
 
 const actionCreator = actionCreatorFactory();
 
