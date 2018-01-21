@@ -9,7 +9,7 @@ function createServer() {
   app.use(cors());
 
   const router = new Router();
-  router.get('/', async (ctx) => {
+  router.get('/api/animals', async (ctx) => {
     ctx.body =  [
       {id:1, name: 'cat'},
       {id:2, name: 'dog'},
