@@ -10,6 +10,7 @@ export default function wrapAsyncWorker<TParameters, TSuccess, TError>(
     return worker(params).then(result => {
       dispatch(asyncAction.done({ params, result }));
       return result;
+    // tslint:disable-next-line:align
     }, (error: TError) => {
       dispatch(asyncAction.failed({ params, error }));
       throw error;
