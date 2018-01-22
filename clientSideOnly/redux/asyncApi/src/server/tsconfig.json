@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es2017",
+    "module": "commonjs",
+    "strict": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "strictFunctionTypes": false
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}

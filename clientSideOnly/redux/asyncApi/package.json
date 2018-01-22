@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/koa-static": "^4.0.0",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.3.0",
+    "koa-static": "^4.0.2",
     "koa2-cors": "^2.0.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -18,19 +20,32 @@
   },
   "devDependencies": {
     "@types/jest": "^22.0.1",
+    "@types/koa": "^2.0.43",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-router": "^7.0.27",
+    "@types/koa2-cors": "^2.0.1",
     "@types/node": "^9.3.0",
     "@types/react": "^16.0.34",
     "@types/react-dom": "^16.0.3",
     "@types/react-redux": "^5.0.14",
     "concurrently": "^3.5.1",
+    "del": "^3.0.0",
+    "gulp": "3.9.1",
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.3",
     "react-scripts-ts": "2.12.0",
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"node ./exampleApi/server.js\" \"react-scripts-ts start\"",
-    "build": "react-scripts-ts build",
+    "start": "concurrently --kill-others \"node ./src/server/index.js\" \"react-scripts-ts start\"",
+    "prebuild": "rm -rf .dist",
+    "build": "concurrently --kill-others-on-fail \"react-scripts-ts build\" \"gulp build-server\"",
+    "postbuild": "mkdir -p .dist && mv build .dist/public",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "runProduction": "node ./.dist/server.js"
   },
   "proxy": "http://localhost:8000/"
 }
