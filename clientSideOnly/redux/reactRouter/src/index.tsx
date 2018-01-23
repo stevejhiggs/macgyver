@@ -7,8 +7,6 @@ import configureStore, { history } from './state/configureStore';
 
 const store = configureStore();
 
-import registerServiceWorker from './registerServiceWorker';
-
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
@@ -17,4 +15,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();
