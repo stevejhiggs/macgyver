@@ -2,7 +2,7 @@
 
 Building a better mullet.
 
-Inspired by mullet.io it's a combination of react on the frontend and hapi.js on the backend. It started as a simple one off client example but is now growing to encompass a variety of different examples for people to take apart and play with.
+Inspired by mullet.io it's a combination of react + typescript on the frontend and koa2 on the backend. It started as a simple one off client example but is now growing to encompass a variety of different examples for people to take apart and play with.
 
 # Available examples
 
