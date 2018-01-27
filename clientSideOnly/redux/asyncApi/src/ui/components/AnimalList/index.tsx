@@ -1,4 +1,4 @@
-import * as AnimalActions from '../../../state/animals/actions';
+import { loadAnimalAction } from '../../../state/animals/actions';
 import { AnimalListView } from './presentation/List';
 import { bindActionCreators, connect, RootState, Dispatch } from '../../../state';
 
@@ -8,16 +8,9 @@ const mapStateToProps = (state: RootState, ownProps: ConnectedProps) => ({
   animals: state.animals
 });
 
-const loadAnimals = () => {
-  return (dispatch: Dispatch) => AnimalActions.loadAnimalWorker(
-    dispatch, 
-    {}
-  );
-};
-
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(
   {
-    loadAnimals: loadAnimals
+    loadAnimals: loadAnimalAction
   }, 
   dispatch
 );

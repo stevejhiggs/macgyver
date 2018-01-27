@@ -7,9 +7,8 @@ export interface Animal {
 }
 
 export type State = Animal[];
-const initialState: State = [];
 
-export const reducer = reducerWithInitialState(initialState)
+export const reducer = reducerWithInitialState([] as Animal[])
   .case(loadAnimals.done, (state, payload) => {
     return payload.result;
   });
