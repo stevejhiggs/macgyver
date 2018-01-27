@@ -1,10 +1,17 @@
 import { loadAnimalAction } from '../../../state/animals/actions';
+import { State } from '../../../state/animals/reducer';
 import { AnimalListView } from './presentation/List';
 import { bindActionCreators, connect, RootState, Dispatch } from '../../../state';
 
-type ConnectedProps = {}; 
+interface StateFromProps {
+  animals: State;
+}
 
-const mapStateToProps = (state: RootState, ownProps: ConnectedProps) => ({
+interface DispatchFromProps {
+  loadAnimals: () => void;
+}
+
+const mapStateToProps = (state: RootState) => ({
   animals: state.animals
 });
 
@@ -16,4 +23,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(
 );
 
 // connects the component to the flux store
-export default connect(mapStateToProps, mapDispatchToProps)(AnimalListView);
+export default connect<StateFromProps, DispatchFromProps>(mapStateToProps, mapDispatchToProps)(AnimalListView);
