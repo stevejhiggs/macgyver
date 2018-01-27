@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Animal } from '../../../../state/animals/reducer';
-import { loadAnimalAction } from '../../../../state/animals/actions';
 
 export interface Props { 
   animals: Animal[];
-  loadAnimals: typeof loadAnimalAction;
+  loadAnimals: () => void;
 }
 
 export const AnimalListView: React.SFC<Props> = (props: Props) =>
@@ -16,7 +15,7 @@ export const AnimalListView: React.SFC<Props> = (props: Props) =>
       )}
     </ul>
     <p>
-      <button onClick={() => { props.loadAnimals(); }}>get animals</button>
+      <button onClick={props.loadAnimals}>get animals</button>
     </p>
   </div>
 );

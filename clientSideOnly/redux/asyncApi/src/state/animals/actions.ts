@@ -1,5 +1,5 @@
 import actionCreatorFactory from 'typescript-fsa';
-import { bindThunkAction, thunkToAction } from 'typescript-fsa-redux-thunk';
+import { bindThunkAction } from 'typescript-fsa-redux-thunk';
 import { Animal } from './reducer';
 
 const actionCreator = actionCreatorFactory();
@@ -8,9 +8,9 @@ export interface LoadAnimalsParams {
   name: string;
 }
 
-export const loadAnimals = actionCreator.async<LoadAnimalsParams, Animal[], {}>('ANIMALS_LOADING');
-export const loadAnimalAction = thunkToAction(bindThunkAction(
-  loadAnimals,
+export const loadAnimalsReducer = actionCreator.async<LoadAnimalsParams, Animal[], {}>('ANIMALS_LOADING');
+export const loadAnimals = bindThunkAction(
+  loadAnimalsReducer,
   async(params): Promise<Animal[]> => {
     const res = await fetch('/api/animals');
     if (res.status >= 400) {
@@ -19,4 +19,4 @@ export const loadAnimalAction = thunkToAction(bindThunkAction(
   
     return await res.json() as Animal[];
   }
-));
+);
