@@ -11,10 +11,10 @@ These operate without any sort of server side rendering
 
 * simpleComponent - the simplest possible implementation of react. Shows how to get the views built and injected client side.
 * redux -> simple component - shows how to use the fantastic redux flux implementation
+* redux -> connectedComponent - covers splitting components up into stateful and presentational sub-components
 * redux -> react-router - adding routing to redux
-* redux -> async api - shows how to handle async calls to external services
-* redux -> splitComponent - covers splitting components up into stateful and presentational sub-components
 * redux -> twitterBootstrap - using react-bootstrap to make things prettier
+* redux -> async api - shows how to handle async calls to external services
 
 ## Universal
 Markup is rendered both server and client side.
@@ -23,7 +23,7 @@ Markup is rendered both server and client side.
 
 ## Installation
 
-    Install node > 5
+    Install node >= 8
 
     git clone https://github.com/stevejhiggs/macgyver
 
@@ -33,12 +33,12 @@ Markup is rendered both server and client side.
 
     cd [EXAMPLENAME]
 
-    npm install
+    yarn
 
-    gulp
+    yarn start
 
 Point your browser to wherever the example is running (it will say in the console)
 
 ## development
 
-running via gulp will give you auto file watching, rebuilding and restarting
+yarn start will give you auto file watching, rebuilding and restarting
