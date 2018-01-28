@@ -9,12 +9,14 @@ const initialState: State = {
 
 export const reducer = reducerWithInitialState(initialState)
     .case(increment, (state, payload) => {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         count: state.count + payload.incrementBy
-      });
+      };
     })
     .case(decrement, (state, payload) => {
-      return Object.assign({}, state, {
+      return {
+        ...state,
         count: state.count - payload.incrementBy
-      });
+      };
     });
