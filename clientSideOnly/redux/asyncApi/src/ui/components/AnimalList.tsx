@@ -36,7 +36,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadAnimals: () => { 
-    return dispatch(loadAnimals({ name: 'bob' })); 
+    return dispatch(loadAnimals.action({ name: 'bob' })); 
   }
 });
 

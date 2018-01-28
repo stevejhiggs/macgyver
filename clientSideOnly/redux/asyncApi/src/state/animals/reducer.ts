@@ -1,5 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { loadAnimalsReducer } from './actions';
+import { loadAnimals } from './actions';
 
 export interface Animal {
   id: number;
@@ -9,6 +9,6 @@ export interface Animal {
 export type State = Animal[];
 
 export const reducer = reducerWithInitialState([] as Animal[])
-  .case(loadAnimalsReducer.done, (state, payload) => {
+  .case(loadAnimals.forReducer.done, (state, payload) => {
     return payload.result;
   });
