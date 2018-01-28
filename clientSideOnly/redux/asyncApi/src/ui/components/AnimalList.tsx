@@ -11,9 +11,14 @@ interface PropsFromDispatch {
   loadAnimals: () => void;
 }
 
-const AnimalList: React.SFC<PropsFromState & PropsFromDispatch> = (props) =>
+interface Props {
+  message: string;
+}
+
+const AnimalList: React.SFC<PropsFromState & PropsFromDispatch & Props> = (props) =>
 (
   <div>
+    <div>{props.message}</div>
     <ul>
       {props.animals.map(animal =>
         <li key={animal.id}>{animal.name}</li>
@@ -36,4 +41,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 });
 
 // connects the component to the flux store
-export default connect<PropsFromState, PropsFromDispatch>(mapStateToProps, mapDispatchToProps)(AnimalList);
+export default connect<PropsFromState, PropsFromDispatch, Props>(mapStateToProps, mapDispatchToProps)(AnimalList);
