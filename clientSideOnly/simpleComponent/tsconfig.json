@@ -13,7 +13,8 @@
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules",

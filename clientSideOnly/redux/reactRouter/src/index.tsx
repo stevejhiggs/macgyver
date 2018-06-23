@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import App from './ui/pages/Layout';
 import configureStore, { history } from './state/configureStore';
 
-const store = configureStore();
+const store = configureStore({});
 
 ReactDOM.render(
   <Provider store={store}>
