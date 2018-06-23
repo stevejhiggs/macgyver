@@ -30,15 +30,16 @@ const AnimalList: React.SFC<PropsFromState & PropsFromDispatch & Props> = (props
   </div>
 );
 
-const mapStateToProps = (state: RootState) => ({
+const mapStateToProps = (state: RootState): PropsFromState => ({
   animals: state.animals
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   loadAnimals: () => { 
-    return dispatch(loadAnimals.action({ name: 'bob' })); 
+    // tslint:disable-next-line:no-any
+    return dispatch<any>(loadAnimals.action({ name: 'bob' })); 
   }
 });
 
 // connects the component to the flux store
-export default connect<PropsFromState, PropsFromDispatch, Props>(mapStateToProps, mapDispatchToProps)(AnimalList);
+export default connect<PropsFromState, PropsFromDispatch, Props> (mapStateToProps, mapDispatchToProps)(AnimalList);

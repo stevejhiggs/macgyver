@@ -9,7 +9,8 @@
     "noUnusedLocals": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
-    "strictFunctionTypes": false
+    "strictFunctionTypes": false,
+    "esModuleInterop": true
   },
   "include": [
     "**/*.ts"

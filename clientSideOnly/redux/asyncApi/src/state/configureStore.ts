@@ -1,10 +1,12 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, DeepPartial, AnyAction } from 'redux';
+import thunkMiddleware, { ThunkMiddleware } from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
-import reducers from './reducer';
+import { RootState, rootReducer } from './reducer';
 
-export default function configureStore(initialState?: {}) {
+export default function configureStore(initialState: DeepPartial<RootState>) {
+  const thunk: ThunkMiddleware<RootState, AnyAction> = thunkMiddleware;
+  
   const middleware = [
     thunk
   ];
@@ -16,7 +18,7 @@ export default function configureStore(initialState?: {}) {
   );
 
   const store = createStore(
-    reducers,
+    rootReducer,
     initialState,
     composedEnhancers
   );

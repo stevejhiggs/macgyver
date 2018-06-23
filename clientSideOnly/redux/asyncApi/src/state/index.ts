@@ -2,4 +2,5 @@
 // apart from this all your components should be using are actions
 // its more just to pull everything together in one easy to access place
 export { connect } from 'react-redux';
-export { RootState, Dispatch } from './reducer';
+export { Dispatch } from 'redux';
+export { RootState } from './reducer';

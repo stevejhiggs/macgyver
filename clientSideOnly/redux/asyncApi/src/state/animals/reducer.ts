@@ -9,6 +9,6 @@ export interface Animal {
 export type State = Animal[];
 
 export const reducer = reducerWithInitialState([] as Animal[])
-  .case(loadAnimals.forReducer.done, (state, payload) => {
+  .case(loadAnimals.async.done, (state, payload) => {
     return payload.result;
   });

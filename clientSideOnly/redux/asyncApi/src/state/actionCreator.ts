@@ -1,16 +1,14 @@
+import { Dispatch } from 'redux';
 import actionCreatorFactory from 'typescript-fsa';
-import { bindThunkAction } from 'typescript-fsa-redux-thunk';
+import { asyncFactory } from 'typescript-fsa-redux-thunk';
+import { RootState } from './reducer';
 
-const actionCreator = actionCreatorFactory();
+const create = actionCreatorFactory();
+const createAsync = asyncFactory<RootState>(create);
 
-export function promiseAction<Returns, Params = {}, Error = {}>(
-  name: string, func: (params: Params) => Promise<Returns>
+export function promiseAction<Returns, ActionParams = {}, Error = {}>(
+  // tslint:disable-next-line:no-any
+  name: string, func: (params: ActionParams, dispatch?: Dispatch, getState?: any, extraArg?: any) => Promise<Returns>
 ) {
-  const forReducer = actionCreator.async<Params, Returns, Error>(name);
-  const action = bindThunkAction(forReducer, func);
-
-  return {
-    action,
-    forReducer
-  };
+  return createAsync<ActionParams, Returns, Error>(name, func);
 }

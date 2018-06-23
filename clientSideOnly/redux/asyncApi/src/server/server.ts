@@ -1,8 +1,9 @@
-import * as Koa from 'koa';
-import * as bodyParser from 'koa-bodyparser';
-import * as Router from 'koa-router';
-import * as cors from 'koa2-cors';
-import * as staticFiles from 'koa-static';
+import { AddressInfo } from 'net';
+import Koa from 'koa';
+import bodyParser from 'koa-bodyparser';
+import Router from 'koa-router';
+import cors from 'koa2-cors';
+import staticFiles from 'koa-static';
 import * as path from 'path';
 
 function createServer() {
@@ -32,7 +33,8 @@ function createServer() {
       };
 
       ctx.body = error;
-      ctx.log.error(error);
+      // tslint:disable-next-line:no-console
+      console.error(error);
     }
   });
 
@@ -47,7 +49,7 @@ const server = createServer();
 try {
   const listener = server.listen(8000, () => {
     // tslint:disable-next-line:no-console
-    console.log(`Server started on port ${listener.address().port}`);
+    console.log(`Server started on port ${(listener.address() as AddressInfo).port}`);
   });
 } catch (e) {
   // tslint:disable-next-line:no-console
