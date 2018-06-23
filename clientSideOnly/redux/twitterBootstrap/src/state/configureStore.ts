@@ -1,15 +1,13 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware, DeepPartial } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import reducers from './reducer';
+import { rootReducer, RootState } from './reducer';
 
 export const history = createHistory();
 
-export default function configureStore(initialState?: {}) {
+export default function configureStore(initialState: DeepPartial<RootState>) {
   const middleware = [
-    thunk,
     routerMiddleware(history)
   ];
 
@@ -19,7 +17,7 @@ export default function configureStore(initialState?: {}) {
   );
 
   const store = createStore(
-    reducers,
+    rootReducer,
     initialState,
     composedEnhancers
   );
