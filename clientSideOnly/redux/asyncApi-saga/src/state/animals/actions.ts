@@ -8,5 +8,9 @@ export interface Animal {
   name: string;
 }
 
+export interface LoadAnimalsParams {
+  name: string;
+}
+
 // tslint:disable-next-line:no-any
-export const loadAnimals = actionCreator.async<any, Animal[]>('FETCHANIMALS');
+export const loadAnimals = actionCreator.async<LoadAnimalsParams, Animal[]>('FETCHANIMALS');

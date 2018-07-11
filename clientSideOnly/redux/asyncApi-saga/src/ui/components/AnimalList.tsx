@@ -36,7 +36,7 @@ const mapStateToProps = (state: RootState): PropsFromState => ({
 const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   loadAnimals: () => { 
     // tslint:disable-next-line:no-any
-    return dispatch<any>(loadAnimals); 
+    return dispatch<any>(loadAnimals.started({name: 'bob'})); 
   }
 });
 

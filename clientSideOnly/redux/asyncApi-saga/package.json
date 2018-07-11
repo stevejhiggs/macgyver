@@ -17,8 +17,7 @@
     "redux-saga": "^0.16.0",
     "typescript-fsa": "2.5.0",
     "typescript-fsa-reducers": "^0.4.5",
-    "typescript-fsa-redux-saga": "^1.1.0",
-    "typescript-fsa-redux-thunk": "^2.0.0-beta.10"
+    "typescript-fsa-redux-saga-extended": "^1.0.6"
   },
   "devDependencies": {
     "@types/jest": "^23.1.1",

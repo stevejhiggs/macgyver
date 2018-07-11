@@ -1,20 +1,15 @@
 import { takeLatest, call } from 'redux-saga/effects';
-import { bindAsyncAction } from 'typescript-fsa-redux-saga';
-import { loadAnimals } from './actions';
+import { bindAsyncAction } from 'typescript-fsa-redux-saga-extended';
+import { loadAnimals, LoadAnimalsParams } from './actions';
 import axios from 'axios';
-
-export interface Animal {
-  id: number;
-  name: string;
-}
-
-export interface LoadAnimalsParams {
-  name: string;
-}
+import { Action } from 'typescript-fsa';
 
 const fetchAnimals = bindAsyncAction(loadAnimals)(
-  function* () {
+  function* (action: Action<LoadAnimalsParams>) {
+    // tslint:disable-next-line:no-console
+    console.log(action.payload.name);
     const response = yield call(() => {
+      // tslint:disable-next-line:no-console
       return axios({
         method: 'get',
         url: '/api/animals'
@@ -25,5 +20,6 @@ const fetchAnimals = bindAsyncAction(loadAnimals)(
 ); 
 
 export function* animalWatcherSaga() {
-  yield takeLatest(loadAnimals.type, fetchAnimals);
+  // tslint:disable-next-line:no-any
+  yield takeLatest(loadAnimals.started, fetchAnimals);
 }
