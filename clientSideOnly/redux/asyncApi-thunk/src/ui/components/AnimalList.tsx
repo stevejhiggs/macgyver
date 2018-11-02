@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Animal } from '../../state/animals/reducer';
 import { loadAnimals } from '../../state/animals/actions';
-import { connect, RootState, Dispatch } from '../../state';
+import { connect, Dispatch } from '../../state';
+import { RootState } from '../../state/reducer';
 
 interface PropsFromState {
   animals: Animal[];
@@ -42,4 +43,4 @@ const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
 });
 
 // connects the component to the flux store
-export default connect<PropsFromState, PropsFromDispatch, Props> (mapStateToProps, mapDispatchToProps)(AnimalList);
+export default connect(mapStateToProps, mapDispatchToProps)(AnimalList);

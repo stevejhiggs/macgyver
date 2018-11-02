@@ -4,7 +4,7 @@ import { asyncFactory } from 'typescript-fsa-redux-thunk';
 import { RootState } from './reducer';
 
 const create = actionCreatorFactory();
-const createAsync = asyncFactory<RootState>(create);
+const createAsync = asyncFactory<RootState>(create as any);
 
 export function promiseAction<Returns, ActionParams = {}, Error = {}>(
   // tslint:disable-next-line:no-any

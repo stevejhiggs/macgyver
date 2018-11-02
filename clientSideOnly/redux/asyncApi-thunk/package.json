@@ -30,20 +30,26 @@
     "@types/react-dom": "^16.0.9",
     "@types/react-redux": "^6.0.9",
     "concurrently": "^3.6.0",
-    "react-scripts-ts": "3.1.0",
+    "react-scripts": "2.1.1",
     "redux-devtools-extension": "^2.13.5",
     "ts-node": "^7.0.0",
     "tslint": "^5.10.0",
     "typescript": "^3.1.6"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"node ./src/server/index.js\" \"react-scripts-ts start\"",
+    "start": "concurrently --kill-others \"node ./src/server/index.js\" \"react-scripts start\"",
     "prebuild": "rm -rf .dist",
-    "build": "concurrently --kill-others-on-fail \"react-scripts-ts build\" \"tsc -p ./src/server/tsconfig.json --outDir .dist\"",
+    "build": "concurrently --kill-others-on-fail \"react-scripts build\" \"tsc -p ./src/server/tsconfig.json --outDir .dist\"",
     "postbuild": "mkdir -p .dist && mv build .dist/public",
     "pretest": "tslint -p ./server/tsconfig.json -t stylish",
-    "test": "react-scripts-ts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "runProduction": "node ./.dist/server.js"
   },
-  "proxy": "http://localhost:8000/"
+  "proxy": "http://localhost:8000/",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

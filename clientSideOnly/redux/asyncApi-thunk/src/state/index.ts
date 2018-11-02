@@ -2,8 +2,6 @@
 // apart from this all your components should be using are actions
 // its more just to pull everything together in one easy to access place
 export { connect } from 'react-redux';
-export { RootState } from './reducer';
-export { ThunkDispatch } from 'redux-thunk';
 import { RootState } from './reducer';
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { Action } from 'redux';
