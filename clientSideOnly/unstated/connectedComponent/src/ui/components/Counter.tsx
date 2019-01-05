@@ -8,11 +8,11 @@ interface Props {
 
 const Counter: React.SFC<Props> = (props) => (
   <Subscribe to={[CounterContainer]}>
-    {(counter: CounterContainer) => (
+    {(counterState: CounterContainer) => (
       <div>
-        <button onClick={() => counter.decrement(props.incrementBy)}>-</button>
-        <span>{counter.state.count}</span>
-        <button onClick={() => counter.increment(props.incrementBy)}>+</button>
+        <button onClick={() => counterState.decrement(props.incrementBy)}>-</button>
+        <span>{counterState.state.count}</span>
+        <button onClick={() => counterState.increment(props.incrementBy)}>+</button>
       </div>
     )}
   </Subscribe>
