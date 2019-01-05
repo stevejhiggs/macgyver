@@ -1,25 +1,22 @@
+import { createBrowserHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
 import { createStore, applyMiddleware, DeepPartial } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
+import createRootReducer, { RootState } from './reducer';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import { rootReducer, RootState } from './reducer';
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 export default function configureStore(initialState: DeepPartial<RootState>) {
-  const middleware = [
-    routerMiddleware(history)
-  ];
-
   const composeEnhancers = composeWithDevTools({});
-  const composedEnhancers = composeEnhancers(
-    applyMiddleware(...middleware)
-  );
 
   const store = createStore(
-    rootReducer,
+    createRootReducer(history),
     initialState,
-    composedEnhancers
+    composeEnhancers(
+      applyMiddleware(
+        routerMiddleware(history)
+      )
+    )
   );
 
   return store;
