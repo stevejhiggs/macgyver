@@ -1,37 +1,23 @@
-import * as React from 'react';
-
-export interface Props {
-  startVal: number;
-}
+import React, { FunctionComponent, useState } from 'react';
 
 interface State {
   count: number;
 }
 
-// as this component has state it cant be written as a pure function
-export default class Counter extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { count: props.startVal };
-  }
-
-  increment() {
-    this.setState({ count: this.state.count + 1 });
-  }
-
-  decrement() {
-    this.setState({ count: this.state.count - 1 });
-  }
-
-  render() {
-    return (
-      <p>
-        Clicked: {this.state.count} times
-        {' '}
-        <button onClick={() => this.increment()}>+</button>
-        {' '}
-        <button onClick={() => this.decrement()}>-</button>
-      </p>
-    );
-  }
+export interface Props {
+  startVal: number;
 }
+
+const Counter: FunctionComponent<Props> = ({ startVal = 0 }) => {
+  // since we pass a number here, clicks is going to be a number.
+  // setState is a function that accepts either a number or a function returning
+  // a number
+  const [state, setState] = useState<State>({count: startVal});
+  return <>
+    <p>Clicked: {state.count} times</p>
+    <button onClick={() => setState({ count: state.count + 1})}>+</button>
+    <button onClick={() => setState({ count: state.count - 1})}>-</button>
+  </>
+}
+
+export default Counter; 
