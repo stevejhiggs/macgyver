@@ -1,6 +1,5 @@
-import * as React from 'react';
-import './home.css';
-import AnimalList from '../../components/AnimalList';
+import "./home.css";
+import AnimalList from "../../components/AnimalList";
 
 const home = () => (
   <div className="App">
