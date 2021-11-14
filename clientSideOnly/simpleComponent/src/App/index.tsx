@@ -1,6 +1,5 @@
-import * as React from 'react';
-import './App.css';
-import Counter from './components/Counter';
+import "./App.css";
+import Counter from "./components/Counter";
 
 // as this component does not have state or actions it can be written as a pure function
 const app = () => (
