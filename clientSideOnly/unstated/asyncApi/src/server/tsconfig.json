@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "es2017",
+    "target": "es2020",
     "module": "commonjs",
     "strict": true,
     "sourceMap": true,
@@ -12,7 +12,5 @@
     "strictFunctionTypes": false,
     "esModuleInterop": true
   },
-  "include": [
-    "**/*.ts"
-  ]
+  "include": ["**/*.ts"]
 }

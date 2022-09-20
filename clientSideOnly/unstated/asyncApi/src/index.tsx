@@ -1,10 +1,9 @@
-import * as ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Provider } from "unstated";
 import App from "./ui/pages/Home";
 
-ReactDOM.render(
+createRoot(document.getElementById("root") as HTMLElement).render(
   <Provider>
     <App />
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
